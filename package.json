@@ -1,23 +1,24 @@
 {
-	"name": "Daonna",
-	"description": "Site web de Daonna.fr",
-	"version": "0.0.1",
-	"engines": {
-		"node": "0.10.x"
-	},
-	"dependencies": {
-		"grunt": "latest",
-		"grunt-cli": "latest",
-		"grunt-autoprefixer": "latest",
-		"grunt-contrib-clean": "latest",
-		"grunt-contrib-connect": "latest",
-		"grunt-contrib-cssmin": "latest",
-		"grunt-contrib-jshint": "latest",
-		"grunt-contrib-sass": "latest",
-		"grunt-contrib-uglify": "latest",
-		"grunt-contrib-watch": "latest",
-		"grunt-contrib-jade": "latest",
-		"grunt-remove-logging": "latest",
-		"load-grunt-tasks": "latest"
-	}
+  "name": "Daonna",
+  "description": "Site web de Daonna.fr",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "express": "^4.12.2",
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-cli": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-remove-logging": "latest",
+    "load-grunt-tasks": "latest"
+  }
 }

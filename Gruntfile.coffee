@@ -100,3 +100,7 @@ module.exports = (grunt) ->
 			# 'jshint', 'removelogging', 'uglify',
 			'sass', 'autoprefixer', 'cssmin',
 		]
+		grunt.registerTask 'heroku', [
+			'clean', 'jade',
+			'sass', 'autoprefixer', 'cssmin',
+		]
