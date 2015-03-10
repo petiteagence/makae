@@ -97,6 +97,6 @@ module.exports = (grunt) ->
 		]
 		grunt.registerTask 'build', [
 			'clean', 'jade',
-			'jshint', 'removelogging', 'uglify',
+			# 'jshint', 'removelogging', 'uglify',
 			'sass', 'autoprefixer', 'cssmin',
 		]
