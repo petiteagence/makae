@@ -9,7 +9,7 @@ module.exports = (grunt) ->
 
 
 		clean:
-			all: ["dist/"]
+			all: ["dist/*", "!dist/img"]
 
 
 		jshint:
