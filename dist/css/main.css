@@ -1,5 +1,17 @@
+/* Inspi
+---------------------------------------
+http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
+
+
 /* Init
 ---------------------------------------*/
+.section_maxwidth { max-width: 1000px; margin: auto; }
+
+.item_paragraphe-image:before, .item_4paragraphes:before { content: " "; display: table; }
+.item_paragraphe-image:after, .item_4paragraphes:after { content: " "; display: table; clear: both; }
+
+.page, .layer_bg { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
 body { margin: 0; }
@@ -80,65 +92,73 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
-[clearfix]:before, [clearfix]:after { content: " "; display: table; }
-
-[clearfix]:after { clear: both; }
-
 html { box-sizing: border-box; }
 
 *, *:before, *:after { box-sizing: inherit; }
 
-.w_section0 .PRX_layer-1:before, .header, .header h2 .l1 *, .header h2 .l2 *, .nav li { display: inline-block; vertical-align: middle; }
-
-.nav ul { list-style: none; margin: 0; }
-
+/* Fonts
+---------------------------------------*/
+@font-face { font-family: 'wolf_in_the_cityregular'; src: url("../fonts/wolf_in_the_city-webfont.eot"); src: url("../fonts/wolf_in_the_city-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/wolf_in_the_city-webfont.woff2") format("woff2"), url("../fonts/wolf_in_the_city-webfont.woff") format("woff"), url("../fonts/wolf_in_the_city-webfont.ttf") format("truetype"), url("../fonts/wolf_in_the_city-webfont.svg#wolf_in_the_cityregular") format("svg"); font-weight: normal; font-style: normal; }
 /* General
 ---------------------------------------*/
-body { background: #f5F5F5; font-family: "Lato", sans-serif; }
+/* PRX base styles --------------------------------------------- */
+/* Header
+---------------------------------------*/
+/* Footer
+---------------------------------------*/
+/* LAYOUT
+---------------------------------------*/
+body { overflow: hidden; }
 
 h1, h2, h3, h4 { margin: 0; padding: 0; }
 
-/* PRX base styles --------------------------------------------- */
-.PRX { height: 500px; height: 100vh; overflow-x: hidden; overflow-y: auto; -webkit-perspective: 300px; perspective: 300px; }
+.page { -webkit-perspective: 100px; perspective: 100px; overflow-x: hidden; overflow-y: auto; }
 
-.PRX_group { position: relative; height: 500px; height: 100vh; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; }
+.section { position: relative; overflow: hidden; }
 
-.PRX_layer { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.layer_fg { -webkit-transform: translateZ(0); transform: translateZ(0); }
 
-.PRX_layer-0 { -webkit-transform: translateZ(90px) scale(0.7); transform: translateZ(90px) scale(0.7); z-index: 1; }
+.layer_bg { top: -100%; bottom: -100%; background-position: 100% 50%; background-size: cover; -webkit-transform: translateZ(-100px) scale(2); transform: translateZ(-100px) scale(2); }
 
-.PRX_layer-1 { -webkit-transform: translateZ(0); transform: translateZ(0); z-index: 4; }
-
-.PRX_layer-2 { -webkit-transform: translateZ(-300px) scale(2); transform: translateZ(-300px) scale(2); z-index: 3; }
-
-.PRX_layer-3 { -webkit-transform: translateZ(-600px) scale(3); transform: translateZ(-600px) scale(3); z-index: 2; }
-
-/* Header
+/* header
 ---------------------------------------*/
-.w_section0 { z-index: 5; }
+.section-header { padding: 60px 0; }
+.section-header .layer_bg { bottom: 0; }
+.section-header { text-align: center; }
+.section-header h2 { font-size: 270%; text-transform: uppercase; color: #FFF; margin-bottom: 50px; font-family: "Josefin Sans", sans-serif; }
+.section-header h2 small { color: #4B2235; font-size: 55%; }
+.section-header h2 strong { color: #4B2235; font-size: 145%; }
+.section-header svg { width: 100%; max-width: 500px; }
+.section-header .text { font-family: wolf_in_the_cityregular; font-size: 200px; }
+.section-header .text_stroke { font-family: wolf_in_the_cityregular; stroke: #fff; stroke-width: 13; font-size: 200px; }
+.section-header .text .maka { fill: #4B2235; }
+.section-header .text .e { fill: orange; }
 
-.w_section0 .PRX_layer-2 { background: url(../img/bg_paris.jpg) no-repeat 50% 50%; background-size: cover; }
-
-.w_section0 .PRX_layer-1 { background: rgba(0, 0, 0, 0.5); }
-
-.w_section0 .PRX_layer-1:before { content: ''; width: 0px; background: red; height: 100%; }
-
-.header { text-align: center; width: calc(100% - 1px); }
-.header h1 { font-size: 750%; text-transform: uppercase; color: #d65fff; font-family: "Montserrat", sans-serif; text-shadow: 0 0 6px #000; }
-.header h2 { font-size: 270%; text-transform: uppercase; color: #FFF; margin-bottom: 50px; font-family: "Josefin Sans", sans-serif; }
-.header h2 .small { color: #F0C5FF; font-size: 55%; }
-.header h2 .big { color: #F0C5FF; font-size: 145%; }
-
-.nav { position: absolute; bottom: 0; left: 0; right: 0; background: #7F3499; }
-
-.nav ul { text-align: center; }
-
-.nav a { display: block; padding: 10px 20px; text-decoration: none; color: #F0C5FF; text-transform: uppercase; }
-
-/* Section1
+/* Sections
 ---------------------------------------*/
-.w_section1 { z-index: 6; background: #fff; overflow: hidden; }
+.section_maxwidth { margin-top: 40px; }
+.section_maxwidth > * { margin-bottom: 40px; }
 
-/* Section2
+/* theme_blanc
 ---------------------------------------*/
-.w_section2 { z-index: 3; background: #F0C5FF; }
+.theme_blanc { background: #fff; }
+
+/* theme_violet
+---------------------------------------*/
+.theme_violet { background: #4B2235; }
+
+/* Styles de contenus
+---------------------------------------*/
+.item_titre { font-size: 230%; text-align: center; }
+
+.item_image { text-align: center; margin: 0; }
+.item_image img { max-width: 100%; }
+
+.item_paragraphe-image .droite { float: right; }
+.item_paragraphe-image .gauche { float: left; }
+
+.item_4paragraphes p { width: 25%; padding: 10px; float: left; }
+
+/* Footer
+---------------------------------------*/
+footer { background: #555; color: #fff; padding: 1000px 50px; }

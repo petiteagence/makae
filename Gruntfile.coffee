@@ -9,7 +9,7 @@ module.exports = (grunt) ->
 
 
 		clean:
-			all: ["dist/*", "!dist/img"]
+			all: ["dist/*", "!dist/img", "!dist/logo", "!dist/fonts"]
 
 
 		jshint:
@@ -77,8 +77,11 @@ module.exports = (grunt) ->
 				files: ['dev/**/*.jade']
 				tasks: ['jade']
 			javascript:
-				files: 'dev/js/*.js'
+				files: ['dev/js/*.js']
 				tasks: ['jshint', 'removelogging', 'uglify']
+			json:
+				files: ['dev/data.json']
+				tasks: ['jade']
 		connect:
 			all:
 				options:

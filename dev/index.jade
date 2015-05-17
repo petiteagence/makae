@@ -1,21 +1,64 @@
+mixin render(item)
+	+#{'render_'+item.type}(item)
+
+mixin render_titre(item)
+	h3(class='item_'+item.type)= item.contenu
+
+mixin render_image(item)
+	- if(item.source.toLowerCase().indexOf('http') > 0) item.source = 'img/'+item.source
+	figure(class='item_'+item.type)
+		img(src=item.source, alt=item.alt, title=item.alt)
+		- if(item.legende)
+			figcaption= item.legende
+
+mixin render_paragraphe(item)
+	p(class='item_'+item.type)= item.contenu
+
+mixin render_paragraphe-image(item)
+	p(class='item_'+item.type)
+		img(class=item.side, src=item.source, alt=item.alt, title=item.alt)
+		span= item.contenu
+
+mixin render_4paragraphes(item)
+	div(class='item_'+item.type)
+		:markdown
+			item.contenu1
+		p= item.contenu2
+		p= item.contenu3
+		p= item.contenu4
+
+mixin render_2box(item)
+	div(class='item_'+item.type)
+		.box1
+			img(src=item.image1)
+			p= item.contenu1
+		.box2
+			img(src=item.image2)
+			p= item.contenu2
+
+
+
 doctype html
 html(lang="fr")
 	include jade/head
 
-body.disable_transitions
+body
 
-	div.page.PRX
+	div.page
 
-		section.w_section0.PRX_group
-			//- .PRX_layer.PRX_layer-0
-			.PRX_layer.PRX_layer-1
+		header.section.section-header
+			.layer_bg(style="background-image: url(img/"+header.image+")")
+			.layer_fg
 				include jade/header
-				include jade/nav
-			.PRX_layer.PRX_layer-2
-			//- .PRX_layer.PRX_layer-3
+				//- include jade/nav
+			
 		
-		section.w_section1.PRX_group
-			.PRX_layer.PRX_layer-2
+		for section in sections
+			section.section(class='theme_'+section.theme)
+				.section_maxwidth
+					for item in section.items
+						+render(item)
 
-		section.w_section2.PRX_group
-			.PRX_layer.PRX_layer-2
+
+		footer.section.section-footert
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur voluptatibus minima, eaque ut voluptatum, possimus iure vel! Ex omnis vitae sint, molestiae animi asperiores impedit, voluptatum architecto optio enim eligendi.

@@ -1,8 +1,91 @@
 {
-	"titre": "Daonna, machin truc muche",
-	"section1": {
-		"titre": "Section 1",
-		"body": "L'évennement pour les salariés",
-		"image": "https://placekitten.com/g/300/200"
-	}
+	"header":{
+		"titre": "Daonna, machin truc muche",
+		"accroche": "Pour que les <small>petites</small> entreprises <br> vivent aussi leurs <strong>grands</strong> moments",
+		"image": "bg_paris_nb.png"
+	},
+	"sections": [
+		{
+			"theme": "blanc",
+			"items": [
+				{
+					"type": "titre",
+					"contenu": "Voici le titre d'une des sections"
+				},
+				{
+					"type": "image",
+					"source": "http://i.imgur.com/StCgryF.jpg",
+					"alt": "Alt de l'image",
+					"legende": ""
+				},
+				{
+					"type": "paragraphe",
+					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "paragraphe-image",
+					"side": "droite",
+					"source": "http://lorempixel.com/300/200",
+					"alt": "Alt de l'image",
+					"legende": "",
+					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "paragraphe-image",
+					"side": "gauche",
+					"source": "http://lorempixel.com/200/300",
+					"alt": "Alt de l'image",
+					"legende": "",
+					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "4paragraphes",
+					"contenu1": "![](http://lorempixel.com/200/300) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+					"contenu2": "Consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
+					"contenu3": "Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
+					"contenu4": "Quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "2box",
+					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
+					"image1": "http://lorempixel.com/100/200",
+					"contenu2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
+					"image2": "http://lorempixel.com/100/200"
+				}
+			]
+		},
+		{
+			"theme": "violet",
+			"items": [
+				{
+					"type": "titre",
+					"contenu": "Voici le titre d'une des sections"
+				},
+				{
+					"type": "image",
+					"source": "http://lorempixel.com/300/200",
+					"alt": "Alt de l'image",
+					"legende": ""
+				},
+				{
+					"type": "paragraphe",
+					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "4paragraphes",
+					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+					"contenu2": "Consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
+					"contenu3": "Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
+					"contenu4": "Quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+				},
+				{
+					"type": "2box",
+					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
+					"image1": "http://lorempixel.com/300/200",
+					"contenu2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
+					"image2": "http://lorempixel.com/300/200"
+				}
+			]
+		}
+	]
 }
