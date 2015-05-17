@@ -21,8 +21,7 @@ mixin render_paragraphe-image(item)
 
 mixin render_4paragraphes(item)
 	div(class='item_'+item.type)
-		:markdown
-			item.contenu1
+		p= item.contenu1
 		p= item.contenu2
 		p= item.contenu3
 		p= item.contenu4
