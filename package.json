@@ -6,7 +6,7 @@
     "node": "0.10.x"
   },
   "dependencies": {
-    "express": "^4.12.2",
+    "express": "latest",
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
     "grunt-cli": "latest",
@@ -20,6 +20,6 @@
     "grunt-contrib-watch": "latest",
     "grunt-remove-logging": "latest",
     "load-grunt-tasks": "latest",
-    "markdown": "^0.5.0"
+    "markdown": "latest"
   }
 }
