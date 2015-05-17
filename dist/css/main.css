@@ -239,11 +239,11 @@ h1, h2, h3, h4 {
   font-family: "Josefin Sans", sans-serif; }
 
 .section-header h2 small {
-  color: #4B2235;
+  color: #7f1b53;
   font-size: 55%; }
 
 .section-header h2 strong {
-  color: #4B2235;
+  color: #7f1b53;
   font-size: 145%; }
 
 .section-header svg {
@@ -261,10 +261,10 @@ h1, h2, h3, h4 {
   font-size: 200px; }
 
 .section-header .text .maka {
-  fill: #4B2235; }
+  fill: #7f1b53; }
 
 .section-header .text .e {
-  fill: orange; }
+  fill: #f37422; }
 
 /* Sections
 ---------------------------------------*/
@@ -274,6 +274,12 @@ h1, h2, h3, h4 {
 .section_maxwidth > * {
   margin-bottom: 40px; }
 
+/* theme_orange
+---------------------------------------*/
+.theme_orange {
+  background: #f37422;
+  color: #7f1b53; }
+
 /* theme_blanc
 ---------------------------------------*/
 .theme_blanc {
@@ -282,7 +288,8 @@ h1, h2, h3, h4 {
 /* theme_violet
 ---------------------------------------*/
 .theme_violet {
-  background: #4B2235; }
+  background: #7f1b53;
+  color: #f37422; }
 
 /* Styles de contenus
 ---------------------------------------*/

@@ -6,9 +6,10 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* Init
 ---------------------------------------*/
 	// Variables
-	$c_violet: #4B2235;
+	$c_violet: #7f1b53;
 	$c_violet2: mix($c_violet, #fff);
-	$c_orange: orange;
+	$c_orange: #f37422;
+
 	$ff_Lato:       'Lato', sans-serif;
 	$ff_Josefin:    'Josefin Sans', sans-serif;
 	$ff_Droid:      'Droid Serif', serif;
@@ -142,6 +143,14 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 
 
+/* theme_orange
+---------------------------------------*/
+	.theme_orange{
+		&{background: $c_orange;color:$c_violet}
+
+	}
+
+
 /* theme_blanc
 ---------------------------------------*/
 	.theme_blanc{
@@ -153,7 +162,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* theme_violet
 ---------------------------------------*/
-	.theme_violet{background: $c_violet}
+	.theme_violet{background: $c_violet;color:$c_orange}
 	.theme_violet .PRX_layer-2{}
 
 
