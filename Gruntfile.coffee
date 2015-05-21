@@ -1,3 +1,15 @@
+coffeeson = require('coffeeson');
+
+# Pour que require accepte les .coffee
+fs = require('fs')
+require.extensions['.coffee'] = (module, filename) -> module.exports = fs.readFileSync(filename, 'utf8')
+
+# Récupération du JSON depuis le coffee
+myDataCoffee = require('./dev/data.coffee')
+myDataJson = coffeeson.toJSON.pretty myDataCoffee.toString(), (err, result) -> result
+
+
+# Grunt tasks
 module.exports = (grunt) ->
 	
 	require("load-grunt-tasks") grunt
@@ -33,7 +45,7 @@ module.exports = (grunt) ->
 		jade:
 			compile:
 				options:
-					data: () -> require('./dev/data.json')
+					data: () -> JSON.parse(myDataJson)
 				files:
 					"dist/index.html": ["dev/index.jade"]
 
@@ -80,7 +92,7 @@ module.exports = (grunt) ->
 				files: ['dev/js/*.js']
 				tasks: ['jshint', 'removelogging', 'uglify']
 			json:
-				files: ['dev/data.json']
+				files: ['dev/data.json', 'dev/data.coffee']
 				tasks: ['jade']
 		connect:
 			all:

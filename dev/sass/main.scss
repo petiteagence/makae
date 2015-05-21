@@ -9,16 +9,21 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	$c_violet: #7f1b53;
 	$c_violet2: mix($c_violet, #fff);
 	$c_orange: #f37422;
+	$c_prune: #7f1b53;
 
 	$ff_Lato:       'Lato', sans-serif;
 	$ff_Josefin:    'Josefin Sans', sans-serif;
 	$ff_Droid:      'Droid Serif', serif;
 	$ff_Montserrat: 'Montserrat', sans-serif;
+	
 	$m_section: 40px;
+	$p_paragraphe: 10px;
+	$w_box3D: 300px;
+	$h_box3D: 200px;
 
 	// Extends
 	%dib{display: inline-block;vertical-align: middle}
-	%ulr{list-style: none;margin: 0}
+	%ulr{list-style: none;margin: 0;padding: 0}
 	%PRX_debug{outline: 5px red solid;}
 	%maw{max-width:1000px;margin: auto}
 	%m_general{margin-bottom: 40px}
@@ -104,8 +109,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* LAYOUT
 ---------------------------------------*/
-	body{overflow: hidden;}
+	body{overflow: hidden;font-family: $ff_Lato; font-size: 16px}
 	h1, h2, h3, h4{margin: 0;padding:0}
+	p{margin: 0}
 
 	.page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
 	.section{position: relative;overflow: hidden;}
@@ -141,12 +147,14 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		&_maxwidth{@extend %maw;margin-top: $m_section}
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
+	.bloc{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
+	.item{display: block;margin:10px;background: transparentize(#fff, .8);padding: 10px;flex:1;min-width: 200px;}
 
 
 /* theme_orange
 ---------------------------------------*/
 	.theme_orange{
-		&{background: $c_orange;color:$c_violet}
+		&{background: $c_orange;color:#fff}
 
 	}
 
@@ -162,42 +170,73 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* theme_violet
 ---------------------------------------*/
-	.theme_violet{background: $c_violet;color:$c_orange}
-	.theme_violet .PRX_layer-2{}
+	.theme_prune{background: $c_violet;color:#fff}
+	.theme_prune .PRX_layer-2{}
 
 
 /* Styles de contenus
 ---------------------------------------*/
-	.item_titre{
-		&{font-size: 230%;text-align: center;}
+	.bloc_titre{
+		&{font-size: 230%;text-align: center;font-family: $ff_Josefin}
 	}
-	.item_image{
-		&{text-align: center;margin: 0}
+	.bloc_image{
+		&{text-align: center;}
 		img{max-width: 100%;}
 		figcaption{}
 	}
-	.item_paragraphe{
-		&{}
-	}
-	.item_paragraphe-image{
-		&{@extend %clearfix;}
-		img{}
-		span{}
+	.bloc_textes{
 
-		.droite{float: right}
-		.gauche{float: left}
+		.texte{text-align: center;}
+		.texte strong{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
+		.texte .image{display: inline-block;}
+		.texte .image img{vertical-align: top;}
+		.texte.dessus .image{margin-bottom: $p_paragraphe}
+		.texte.dessous .image{margin-top: $p_paragraphe}
+		.texte.droite{@extend %clearfix;text-align: left}
+		.texte.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
+		.texte.gauche{@extend %clearfix;text-align: left}
+		.texte.gauche .image{float: left; margin: 0 $p_paragraphe $p_paragraphe 0}
+
+		.liste{margin: 0;padding-left: 30px;}
 	}
-	.item_4paragraphes{
-		&{@extend %clearfix;}
-		p{width: 25%;padding: 10px;float: left;}
-	}
-	.item_2box{
+	.bloc_box3D{
 		&{}
+		.boxes{@extend %ulr}
+		.w_box{width: $w_box3D;height: $h_box3D;margin: 30px;float: left;perspective: 1000px;}
+		.box{width: $w_box3D;height: $h_box3D;display: block;transform-style: preserve-3d;transform: translateZ(- $w_box3D/2);transition: transform 350ms;}
+		.box::after{content: '';width: $w_box3D;height: $w_box3D;position: absolute;bottom: 0;box-shadow: 0 30px 50px rgba(0,0,0,0.3);transform-origin: 100% 100%;transform: rotateX(90deg) translateY($w_box3D/2);transition: box-shadow 350ms;}
+
+		.box:hover{transform: rotateY(-78deg) translateZ(20px);}
+		.box:hover::after{box-shadow: 20px -5px 50px rgba(0,0,0,0.3);}
+
+		.box_img,.box_info{position: absolute;width: $w_box3D;height: $h_box3D;background-color: #fff;backface-visibility: hidden;}
+		.box_img{transform: translateZ($w_box3D/2);background-size: cover;background-repeat: no-repeat;}
+		.box_img img{width: 100%}
+		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);border: 1px solid red;padding: 10px}
+
+		.box_orange{
+			.box_img{background:$c_orange}
+			.box_info{background:mix($c_orange, #fff);}
+		}
+		.box_prune{
+			.box_img{background:$c_prune}
+			.box_info{background:mix($c_prune, #fff);}
+		}
+
+
+
+
+		// .w_box{width: auto;height:auto}
+		// .box{width: auto;height:auto}
+		// .box_img,.box_info{width: auto;height: auto;}
+		// .box_img{position: static;width: auto}
+		// .box_img img{width: auto}
+		// .box_info{@extend %fullbleed;}
 	}
 
 
 /* Footer
 ---------------------------------------*/
-	footer{background: #555;color:#fff;padding:1000px 50px}
+	footer{background: #555;color:#fff;padding:100px 0}
 
 

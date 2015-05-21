@@ -6,84 +6,171 @@
 	},
 	"sections": [
 		{
-			"theme": "orange",
-			"items": [
+			"theme": "blanc",
+			"blocs" : [
 				{
-					"type": "titre",
-					"contenu": "Voici le titre d'une des sections"
-				},
-				{
-					"type": "image",
-					"source": "http://i.imgur.com/StCgryF.jpg",
-					"alt": "Alt de l'image",
-					"legende": ""
-				},
-				{
-					"type": "paragraphe",
-					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
-				},
-				{
-					"type": "paragraphe-image",
-					"side": "droite",
-					"source": "http://lorempixel.com/300/200",
-					"alt": "Alt de l'image",
-					"legende": "",
-					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
-				},
-				{
-					"type": "paragraphe-image",
-					"side": "gauche",
-					"source": "http://lorempixel.com/200/300",
-					"alt": "Alt de l'image",
-					"legende": "",
-					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
-				},
-				{
-					"type": "4paragraphes",
-					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
-					"contenu2": "Consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
-					"contenu3": "Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
-					"contenu4": "Quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
-				},
-				{
-					"type": "2box",
-					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
-					"image1": "http://lorempixel.com/100/200",
-					"contenu2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
-					"image2": "http://lorempixel.com/100/200"
+					"type": "box3D",
+					"items" : [
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/120x150",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "droite"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "gauche"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/140x130",
+							"imageAlt" : "Alt de l'image", 
+							"imagePosition" : "dessus"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/150x120",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "dessous"
+						}
+					]
 				}
 			]
 		},
 		{
-			"theme": "violet",
-			"items": [
+			"theme": "orange",
+			"blocs": [
 				{
 					"type": "titre",
 					"contenu": "Voici le titre d'une des sections"
 				},
 				{
 					"type": "image",
-					"source": "http://lorempixel.com/300/200",
-					"alt": "Alt de l'image",
-					"legende": ""
+					"imageUrl": "http://placehold.it/450x120",
+					"imageAlt": "Alt de l'image",
+					"imageLegende": "Légende de l'image"
 				},
 				{
-					"type": "paragraphe",
-					"contenu": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+					"type": "textes",
+					"items" : [
+						{
+							"liste": ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, fugit excepturi illo. Ipsa est minus, sit modi aut blanditiis a quos. Voluptate, ad aut consectetur qui fuga reiciendis possimus praesentium?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, fugit excepturi illo. Ipsa est minus, sit modi aut blanditiis a quos. Voluptate, ad aut consectetur qui fuga reiciendis possimus praesentium?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, fugit excepturi illo. Ipsa est minus, sit modi aut blanditiis a quos. Voluptate, ad aut consectetur qui fuga reiciendis possimus praesentium?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, fugit excepturi illo. Ipsa est minus, sit modi aut blanditiis a quos. Voluptate, ad aut consectetur qui fuga reiciendis possimus praesentium?"]
+						},
+						{
+							"imageUrl": "http://placehold.it/120x150",
+							"imageAlt": "Alt de l'image",
+							"imageLien": "http://www.google.fr"
+						}
+					]
 				},
 				{
-					"type": "4paragraphes",
-					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
-					"contenu2": "Consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
-					"contenu3": "Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates.",
-					"contenu4": "Quibusdam laudantium sequi nihil, odio eius alias ullam tempore vel sit aliquid eveniet eligendi quae modi asperiores voluptates."
+					"type": "textes",
+					"items" : [
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"itemLien": "www.yojimbo.fr"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"imageLien": "http://www.google.fr"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140"
+						}
+					]
 				},
 				{
-					"type": "2box",
-					"contenu1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
-					"image1": "http://lorempixel.com/300/200",
-					"contenu2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio omnis aliquid tenetur praesentium reprehenderit earum placeat nostrum voluptate, reiciendis porro et laborum ex quaerat quisquam, officia impedit iste! Doloribus, molestias.",
-					"image2": "http://lorempixel.com/300/200"
+					"type": "textes",
+					"items" : [
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/120x150",
+							"imageAlt" : "Alt de l'image"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "gauche"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/140x130",
+							"imagePosition" : "dessus"
+						},
+						{
+							"liste": ["item 1", "item 2", "item 3", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, fugit excepturi illo. Ipsa est minus, sit modi aut blanditiis a quos. Voluptate, ad aut consectetur qui fuga reiciendis possimus praesentium?"]
+						}
+					]
+				},
+				{
+					"type": "textes",
+					"items" : [
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/120x150",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "gauche"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "droite"
+						}
+					]
+				}
+			]
+		},
+		{
+			"theme": "prune",
+			"blocs": [
+				{
+					"type": "titre",
+					"contenu": "Voici le titre d'une des sections"
+				},
+				{
+					"type": "image",
+					"imageUrl": "http://placehold.it/650x220",
+					"imageAlt": "Alt de l'image",
+					"imageLegende": "Légende de l'image"
+				},
+				{
+					"type": "textes",
+					"items" : [
+						{
+							"gras": "un peu plus visible",
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/120x150",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "droite"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/130x140",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "gauche"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius"
+						},
+						{
+							"imageUrl": "http://placehold.it/140x130",
+							"imageAlt" : "Alt de l'image", 
+							"imagePosition" : "dessus"
+						},
+						{
+							"texte": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+							"imageUrl": "http://placehold.it/150x120",
+							"imageAlt" : "Alt de l'image",
+							"imagePosition" : "dessous"
+						}
+					]
 				}
 			]
 		}

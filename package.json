@@ -6,6 +6,7 @@
     "node": "0.10.x"
   },
   "dependencies": {
+    "coffeeson": "^0.1.0",
     "express": "latest",
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
@@ -15,10 +16,10 @@
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-jade": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-sass": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-remove-logging": "latest",
+    "grunt-sass": "latest",
     "load-grunt-tasks": "latest",
     "markdown": "latest"
   }

@@ -1,39 +1,80 @@
-mixin render(item)
-	+#{'render_'+item.type}(item)
 
-mixin render_titre(item)
-	h3(class='item_'+item.type)= item.contenu
+- var resolveImageSrc = function(src){
+- 	return (src.toLowerCase().indexOf('http') > -1) ? src : 'img/'+src;
+- }
 
-mixin render_image(item)
-	- if(item.source.toLowerCase().indexOf('http') > 0) item.source = 'img/'+item.source
-	figure(class='item_'+item.type)
-		img(src=item.source, alt=item.alt, title=item.alt)
-		- if(item.legende)
-			figcaption= item.legende
+- var markup = function(text){
+- 	text = text.replace(/\[saut\]/, '<br>');
+- 	text = text.replace(/\[gras\|([^\]]*)\]/, '<strong>$1</strong>');
+- 	text = text.replace(/\[petit\|([^\]]*)\]/, '<small>$1</small>');
+- 	text = text.replace(/\[lien\|([^\|]*)\|([^\]]*)\]/, '<a href="$2">$1</a>');
+- 	text = text.replace(/\[ancre\|([^\|]*)\|([^\]]*)\]/, '<a href="#$2">$1</a>');
+- 	return text
+- }
 
-mixin render_paragraphe(item)
-	p(class='item_'+item.type)= item.contenu
+mixin img(src,alt,lien)
+	if lien
+		a.image(href=lien)
+			img(src=resolveImageSrc(src), alt=alt, title=alt)
+	else
+		span.image
+			img(src=resolveImageSrc(src), alt=alt, title=alt)
 
-mixin render_paragraphe-image(item)
-	p(class='item_'+item.type)
-		img(class=item.side, src=item.source, alt=item.alt, title=item.alt)
-		span= item.contenu
+	
 
-mixin render_4paragraphes(item)
-	div(class='item_'+item.type)
-		p= item.contenu1
-		p= item.contenu2
-		p= item.contenu3
-		p= item.contenu4
+mixin render(bloc)
+	+#{'render_'+bloc.type}(bloc)
 
-mixin render_2box(item)
-	div(class='item_'+item.type)
-		.box1
-			img(src=item.image1)
-			p= item.contenu1
-		.box2
-			img(src=item.image2)
-			p= item.contenu2
+mixin render_titre(bloc)
+	.bloc(class='bloc_'+bloc.type)
+		h3.item!= markup(bloc.contenu)
+
+mixin render_image(bloc)
+	.bloc(class='bloc_'+bloc.type)
+		figure.item
+			+img(bloc.imageUrl, bloc.imageAlt, bloc.imageLien)
+			if bloc.imageLegende
+				figcaption!= markup(bloc.imageLegende)
+
+mixin render_textes(bloc)
+	.bloc(class='bloc_'+bloc.type)
+		for i in bloc.items
+			if i.lien
+				a.item(href=i.lien)
+					+render_blocItem(i)
+			else
+				.item
+					+render_blocItem(i)
+
+
+mixin render_blocItem(i)
+	if i.liste
+		ul.liste
+			for li in i.liste
+				li!= markup(li)
+	else
+		div.texte(class=i.imagePosition||'dessus')
+			if i.gras
+				strong!= markup(i.gras)
+			- if(i.imageUrl && i.imagePosition != "dessous")
+				+img(i.imageUrl, i.imageAlt, i.imageLien)
+			if i.texte
+				p!= markup(i.texte)
+			- if(i.imageUrl && i.imagePosition == "dessous")
+				+img(i.imageUrl, i.imageAlt, i.imageLien)
+
+
+mixin render_box3D(bloc)
+	.bloc(class='bloc_'+bloc.type)
+		ul.boxes
+			for i in bloc.items
+				li.w_box
+					a.box(class='box_'+i.boxColor, href='#'+i.lien)
+						.box_img
+							+img(i.imageUrl, i.imageAlt)
+						.box_info
+							p!= markup(i.texte)
+
 
 
 
@@ -55,10 +96,12 @@ body
 		
 		for section in sections
 			section.section(class='theme_'+section.theme)
+				a(name=section.id)
 				.section_maxwidth
-					for item in section.items
-						+render(item)
+					for bloc in section.blocs
+						+render(bloc)
 
 
 		footer.section.section-footert
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur voluptatibus minima, eaque ut voluptatum, possimus iure vel! Ex omnis vitae sint, molestiae animi asperiores impedit, voluptatum architecto optio enim eligendi.
+			.bloc
+				p.item Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur voluptatibus minima, eaque ut voluptatum, possimus iure vel! Ex omnis vitae sint, molestiae animi asperiores impedit, voluptatum architecto optio enim eligendi.
