@@ -112,6 +112,11 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	body{overflow: hidden;font-family: $ff_Lato; font-size: 16px}
 	h1, h2, h3, h4{margin: 0;padding:0}
 	p{margin: 0}
+	a{
+		color:inherit;
+		&:hover{background: rgba(0,0,0,.1);text-decoration: none}
+		&:visited{color:inherit}
+	}
 
 	.page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
 	.section{position: relative;overflow: hidden;}
@@ -177,7 +182,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* Styles de contenus
 ---------------------------------------*/
 	.bloc_titre{
-		&{font-size: 230%;text-align: center;font-family: $ff_Josefin}
+		h3{font-size: 230%;text-align: center;font-family: $ff_Josefin}
+		h4{font-size: 160%;text-align: center;font-family: $ff_Josefin}
 	}
 	.bloc_image{
 		&{text-align: center;}
@@ -188,16 +194,22 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 		.texte{text-align: center;}
 		.texte strong{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
-		.texte .image{display: inline-block;}
-		.texte .image img{vertical-align: top;}
-		.texte.dessus .image{margin-bottom: $p_paragraphe}
-		.texte.dessous .image{margin-top: $p_paragraphe}
-		.texte.droite{@extend %clearfix;text-align: left}
-		.texte.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
-		.texte.gauche{@extend %clearfix;text-align: left}
-		.texte.gauche .image{float: left; margin: 0 $p_paragraphe $p_paragraphe 0}
 
-		.liste{margin: 0;padding-left: 30px;}
+		.liste ul{margin: 0;padding-left: 30px;text-align: left;}
+		
+		.droite{@extend %clearfix;text-align: left}
+		.gauche{@extend %clearfix;text-align: left}
+		.dessus{text-align: center}
+		.dessous{text-align: center}
+
+		.image{display: inline-block;}
+		.image img{vertical-align: top;}
+		.dessus .image{margin-bottom: $p_paragraphe}
+		.dessous .image{margin-top: $p_paragraphe}
+		.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
+		.gauche .image{float: left; margin: 0 $p_paragraphe $p_paragraphe 0}
+
+		
 	}
 	.bloc_box3D{
 		&{}
@@ -237,6 +249,6 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* Footer
 ---------------------------------------*/
-	footer{background: #555;color:#fff;padding:100px 0}
+	footer{background: #555;color:#fff;}
 
 

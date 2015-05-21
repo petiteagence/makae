@@ -4,8 +4,10 @@
 - }
 
 - var markup = function(text){
+-   if(!text) return '';
 - 	text = text.replace(/\[saut\]/, '<br>');
 - 	text = text.replace(/\[gras\|([^\]]*)\]/, '<strong>$1</strong>');
+- 	text = text.replace(/\[italique\|([^\]]*)\]/, '<em>$1</em>');
 - 	text = text.replace(/\[petit\|([^\]]*)\]/, '<small>$1</small>');
 - 	text = text.replace(/\[lien\|([^\|]*)\|([^\]]*)\]/, '<a href="$2">$1</a>');
 - 	text = text.replace(/\[ancre\|([^\|]*)\|([^\]]*)\]/, '<a href="#$2">$1</a>');
@@ -27,7 +29,10 @@ mixin render(bloc)
 
 mixin render_titre(bloc)
 	.bloc(class='bloc_'+bloc.type)
-		h3.item!= markup(bloc.contenu)
+		div.item
+			h3!= markup(bloc.titre)
+			if bloc.soustitre
+				h4.item!= markup(bloc.soustitre)
 
 mixin render_image(bloc)
 	.bloc(class='bloc_'+bloc.type)
@@ -49,13 +54,19 @@ mixin render_textes(bloc)
 
 mixin render_blocItem(i)
 	if i.liste
-		ul.liste
-			for li in i.liste
-				li!= markup(li)
+		div.liste(class=i.imagePosition||'dessus')
+			- if(i.imageUrl && i.imagePosition != "dessous")
+				+img(i.imageUrl, i.imageAlt, i.imageLien)
+			ul
+				for li in i.liste
+					li!= markup(li)
+			- if(i.imageUrl && i.imagePosition == "dessous")
+				+img(i.imageUrl, i.imageAlt, i.imageLien)
+		
 	else
 		div.texte(class=i.imagePosition||'dessus')
-			if i.gras
-				strong!= markup(i.gras)
+			//- if i.gras
+			//- 	strong!= markup(i.gras)
 			- if(i.imageUrl && i.imagePosition != "dessous")
 				+img(i.imageUrl, i.imageAlt, i.imageLien)
 			if i.texte
@@ -67,13 +78,13 @@ mixin render_blocItem(i)
 mixin render_box3D(bloc)
 	.bloc(class='bloc_'+bloc.type)
 		ul.boxes
-			for i in bloc.items
+			for b in bloc.boxes
 				li.w_box
-					a.box(class='box_'+i.boxColor, href='#'+i.lien)
+					a.box(class='box_'+b.boxColor, href='#'+b.lien)
 						.box_img
-							+img(i.imageUrl, i.imageAlt)
+							+img(b.imageUrl, b.imageAlt)
 						.box_info
-							p!= markup(i.texte)
+							p!= markup(b.texte)
 
 
 
@@ -88,6 +99,7 @@ body
 	div.page
 
 		header.section.section-header
+			a(name='header')
 			.layer_bg(style="background-image: url(img/"+header.image+")")
 			.layer_fg
 				include jade/header
@@ -102,6 +114,8 @@ body
 						+render(bloc)
 
 
-		footer.section.section-footert
-			.bloc
-				p.item Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur voluptatibus minima, eaque ut voluptatum, possimus iure vel! Ex omnis vitae sint, molestiae animi asperiores impedit, voluptatum architecto optio enim eligendi.
+		footer.section.section-footer
+			a(name='footer')
+			.section_maxwidth
+				for bloc in footer.blocs
+					+render(bloc)

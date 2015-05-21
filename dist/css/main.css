@@ -14,11 +14,11 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
   max-width: 1000px;
   margin: auto; }
 
-.bloc_textes .texte.droite:before, .bloc_textes .texte.gauche:before {
+.bloc_textes .droite:before, .bloc_textes .gauche:before {
   content: " ";
   display: table; }
 
-.bloc_textes .texte.droite:after, .bloc_textes .texte.gauche:after {
+.bloc_textes .droite:after, .bloc_textes .gauche:after {
   content: " ";
   display: table;
   clear: both; }
@@ -208,6 +208,14 @@ h1, h2, h3, h4 {
 p {
   margin: 0; }
 
+a {
+  color: inherit; }
+  a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    text-decoration: none; }
+  a:visited {
+    color: inherit; }
+
 .page {
   -webkit-perspective: 100px;
           perspective: 100px;
@@ -331,8 +339,13 @@ p {
 
 /* Styles de contenus
 ---------------------------------------*/
-.bloc_titre {
+.bloc_titre h3 {
   font-size: 230%;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif; }
+
+.bloc_titre h4 {
+  font-size: 160%;
   text-align: center;
   font-family: "Josefin Sans", sans-serif; }
 
@@ -350,35 +363,42 @@ p {
   font-size: 130%;
   margin-bottom: 10px; }
 
-.bloc_textes .texte .image {
-  display: inline-block; }
-
-.bloc_textes .texte .image img {
-  vertical-align: top; }
-
-.bloc_textes .texte.dessus .image {
-  margin-bottom: 10px; }
-
-.bloc_textes .texte.dessous .image {
-  margin-top: 10px; }
-
-.bloc_textes .texte.droite {
+.bloc_textes .liste ul {
+  margin: 0;
+  padding-left: 30px;
   text-align: left; }
 
-.bloc_textes .texte.droite .image {
+.bloc_textes .droite {
+  text-align: left; }
+
+.bloc_textes .gauche {
+  text-align: left; }
+
+.bloc_textes .dessus {
+  text-align: center; }
+
+.bloc_textes .dessous {
+  text-align: center; }
+
+.bloc_textes .image {
+  display: inline-block; }
+
+.bloc_textes .image img {
+  vertical-align: top; }
+
+.bloc_textes .dessus .image {
+  margin-bottom: 10px; }
+
+.bloc_textes .dessous .image {
+  margin-top: 10px; }
+
+.bloc_textes .droite .image {
   float: right;
   margin: 0 0 10px 10px; }
 
-.bloc_textes .texte.gauche {
-  text-align: left; }
-
-.bloc_textes .texte.gauche .image {
+.bloc_textes .gauche .image {
   float: left;
   margin: 0 10px 10px 0; }
-
-.bloc_textes .liste {
-  margin: 0;
-  padding-left: 30px; }
 
 .bloc_box3D .w_box {
   width: 300px;
@@ -460,5 +480,4 @@ p {
 ---------------------------------------*/
 footer {
   background: #555;
-  color: #fff;
-  padding: 100px 0; }
+  color: #fff; }
