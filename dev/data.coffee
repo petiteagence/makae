@@ -84,14 +84,14 @@ sections: [
 				boxes: [
 					{
 						texte: "MakaEvent : une direction événementielle externalisée [saut] La solution de coordination d’événements pour les petites et moyennes entreprises",
-						imageUrl: "http://placehold.it/300x200"
+						imageUrl: "box_event.png"
 						imageAlt: "Alt de l'image"
 						themeBox: "prune"
 						lien: "makaevent"
 					}
 					{
 						texte: "MakaePop : la solution sur mesure pour e-commerçants et créateurs en pop up store",
-						imageUrl: "http://placehold.it/300x200"
+						imageUrl: "box_pop.png"
 						imageAlt: "Alt de l'image"
 						themeBox: "orange"
 						lien: "makaepop"
