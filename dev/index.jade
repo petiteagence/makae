@@ -28,59 +28,59 @@ mixin render(bloc)
 	+#{'render_'+bloc.type}(bloc)
 
 mixin render_titre(bloc)
-	.bloc(class='bloc_'+bloc.type)
-		div.item
-			h3!= markup(bloc.titre)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
+		div.item(debug='item_titre')
+			h1!= markup(bloc.titre)
 			if bloc.soustitre
-				h4.item!= markup(bloc.soustitre)
+				h2.item(debug='item_soustitre')!= markup(bloc.soustitre)
 
 mixin render_image(bloc)
-	.bloc(class='bloc_'+bloc.type)
-		figure.item
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
+		figure.item(debug='item_image')
 			+img(bloc.imageUrl, bloc.imageAlt, bloc.imageLien)
 			if bloc.imageLegende
 				figcaption!= markup(bloc.imageLegende)
 
 mixin render_textes(bloc)
-	.bloc(class='bloc_'+bloc.type)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
 		for i in bloc.items
 			if i.lien
-				a.item(href=i.lien)
-					+render_blocItem(i)
+				if i.liste
+					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste'): +render_blocItem_liste(i)
+				else
+					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte'): +render_blocItem_texte(i)
 			else
-				.item
-					+render_blocItem(i)
+				if i.liste
+					.item.liste(debug='item_liste'): +render_blocItem_liste(i)
+				else
+					.item.texte(debug='item_texte'): +render_blocItem_texte(i)
+			
 
 
-mixin render_blocItem(i)
-	if i.liste
-		div.liste(class=i.imagePosition||'dessus')
-			- if(i.imageUrl && i.imagePosition != "dessous")
-				+img(i.imageUrl, i.imageAlt, i.imageLien)
-			ul
-				for li in i.liste
-					li!= markup(li)
-			- if(i.imageUrl && i.imagePosition == "dessous")
-				+img(i.imageUrl, i.imageAlt, i.imageLien)
+mixin render_blocItem_liste(i)
+	- if(i.imageUrl && i.imagePosition != "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	ul
+		for li in i.liste
+			li!= markup(li)
+	- if(i.imageUrl && i.imagePosition == "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
 		
-	else
-		div.texte(class=i.imagePosition||'dessus')
-			//- if i.gras
-			//- 	strong!= markup(i.gras)
-			- if(i.imageUrl && i.imagePosition != "dessous")
-				+img(i.imageUrl, i.imageAlt, i.imageLien)
-			if i.texte
-				p!= markup(i.texte)
-			- if(i.imageUrl && i.imagePosition == "dessous")
-				+img(i.imageUrl, i.imageAlt, i.imageLien)
+mixin render_blocItem_texte(i)
+	- if(i.imageUrl && i.imagePosition != "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	if i.texte
+		p!= markup(i.texte)
+	- if(i.imageUrl && i.imagePosition == "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
 
 
 mixin render_box3D(bloc)
-	.bloc(class='bloc_'+bloc.type)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
 		ul.boxes
 			for b in bloc.boxes
 				li.w_box
-					a.box(class='box_'+b.boxColor, href='#'+b.lien)
+					a.box(class='box_'+b.themeBox, href='#'+b.lien)
 						.box_img
 							+img(b.imageUrl, b.imageAlt)
 						.box_info
@@ -113,9 +113,21 @@ body
 					for bloc in section.blocs
 						+render(bloc)
 
+		section.section.section-contact
+			a(name='contact')
+			.section_maxwidth
+				.bloc
+					.item
+						.titre Formulaire de contact
+						contact-form
+					.item
+		
 
 		footer.section.section-footer
 			a(name='footer')
 			.section_maxwidth
 				for bloc in footer.blocs
 					+render(bloc)
+
+		script.
+			if(~window.location.href.indexOf('debug')) document.body.className = 'debug';

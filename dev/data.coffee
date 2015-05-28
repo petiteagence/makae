@@ -72,7 +72,7 @@
 
 header:
 	titre: "Makae"
-	accroche: "Pour que les [petit|petites] entreprises [saut] vivent aussi leurs [gras|grands] moments"
+	accroche: "Pour que les petites entreprises [saut] vivent aussi leurs grands moments"
 	image: "bg_paris_nb.png"
 sections: [
 	{
@@ -83,31 +83,31 @@ sections: [
 				type: "box3D"
 				boxes: [
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
-						imageUrl: "http://placehold.it/300x200"
-						imageAlt: "Alt de l'image"
-						themeBox: "orange"
-						lien: "makaevents"
-					}
-					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "MakaEvent : une direction événementielle externalisée [saut] La solution de coordination d’événements pour les petites et moyennes entreprises",
 						imageUrl: "http://placehold.it/300x200"
 						imageAlt: "Alt de l'image"
 						themeBox: "prune"
-						lien: "makapop"
+						lien: "makaevent"
+					}
+					{
+						texte: "MakaePop : la solution sur mesure pour e-commerçants et créateurs en pop up store",
+						imageUrl: "http://placehold.it/300x200"
+						imageAlt: "Alt de l'image"
+						themeBox: "orange"
+						lien: "makaepop"
 					}
 				]
 			}
 		]
 	}
 	{
-		id: "makaevents"
-		theme: "orange"
+		id: "makaevent"
+		theme: "prune"
 		blocs: [
 			{
 				type: "titre"
-				titre: "Voici le titre d'une des [italique|sections]"
-				soustitre: "Voici le sous-titre d'une des sections"
+				titre: "Que faisons-nous ?"
+				soustitre: "Nous organisons des événements éphémères mais de longue durée",
 			}
 			{
 				type: "image"
@@ -119,20 +119,20 @@ sections: [
 				type: "textes"
 				items: [
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur [italique|adipisicing] elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "MakaEvent répond à toutes les entreprises qui se posent des questions pour stabiliser leurs effectifs, les motiver, en faire des collaborateurs impliqués pour leur société.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "droite"
 						lien: "http://www.google.fr"
 					}
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur [lien|adipisicing|http://placehold.it/120x150] elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "Vous êtes en train de vivre un moment important dans la vie de votre entreprise, vous venez de vous développer rapidement, vous avez besoin de rapprocher vos collaborateurs ? [saut] MakaEvent vous accompagne pour organiser l’événement qu’il vous faut.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "droite"
 					}
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "D’humain à humain, les échanges se facilitent, les problèmes se résolvent, au final ce sont vos clients qui seront satisfaits.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "droite"
@@ -143,25 +143,25 @@ sections: [
 				type: "textes"
 				items: [
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "Ensemble, nous définissons vos besoins, votre situation, vos attentes, votre contexte qui feront que votre événement sera différent de tous les autres",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "dessus"
 					}
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "MakaEvent vous permet de vivre un moment unique avec une organisation de qualité, un réseau de partenaires de confiance, des idées originales ; le juste dosage de qualité et de rêve pour optimiser la motivation de vos salariés et les impliquer pour l’avenir.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "droite"
 					}
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "MakaEvent vous propose pour cela une formule complète : depuis la conception de l’événement, la recherche des partenaires, leur coordination, jusqu’à la réalisation le jour J.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "dessous"
 					}
 					{
-						texte: "Lorem ipsum dolor sit amet, consec tetur adipisicing elit. Doloremque ducimus quis sunt, quibusdam laudantium sequi nihil, odio eius",
+						texte: "Et parce qu’un événement de cette nature ne dure pas qu’une journée, MakaEvent vous propose de suivre les effets dans votre entreprise après l’événement, au travers d’un suivi qualité.",
 						imageUrl: "http://placehold.it/120x150"
 						imageAlt: "Alt de l'image"
 						imagePosition: "gauche"
@@ -171,12 +171,13 @@ sections: [
 		]
 	}
 	{
-		id: "makapop"
-		theme: "prune"
+		id: "makaepop"
+		theme: "orange"
 		blocs: [
 			{
 				type: "titre"
-				titre: "Voici le titre d'une des sections"
+				titre: "Que faisons-nous ?"
+				soustitre: "Nous vous faisons gagner du temps !",
 			}
 			{
 				type: "image"
@@ -189,10 +190,10 @@ sections: [
 				items: [
 					{
 						liste: [
-							"Lorem ipsum dolor sit amet consec tetur adipisicing elit. Sint fugit excepturi illo. Ipsa est minus sit modi aut blanditiis a quos. Voluptate ad aut consec tetur qui fuga reiciendis possimus praesentium?"
-							"Lorem ipsum dolor sit amet consec tetur adipisicing elit. Sint fugit excepturi illo. Ipsa est minus sit modi aut blanditiis a quos. Voluptate ad aut consec tetur qui fuga reiciendis possimus praesentium?"
-							"Lorem ipsum dolor sit amet consec tetur adipisicing elit. Sint fugit excepturi illo. Ipsa est minus sit modi aut blanditiis a quos. Voluptate ad aut consec tetur qui fuga reiciendis possimus praesentium?"
-							"Lorem ipsum dolor sit amet consec tetur adipisicing elit. Sint fugit excepturi illo. Ipsa est minus sit modi aut blanditiis a quos. Voluptate ad aut consec tetur qui fuga reiciendis possimus praesentium?"
+							"La vocation de MakaePop est de proposer des solutions tout compris en magasin éphémère pour les sites d’e-commerce qui souhaitent tenter l’aventure IRL. Un produit à tester ? Une occasion saisonnière de vous faire connaitre en boutique physique ? Une opération pour lancer une promotion ? Relancer vos ventes par des solutions innovantes ? Vous faire connaître de vos clients en ligne ?"
+							" A partir d’un brief pour connaitre vos produits, vos clients actuels, votre cible, l’action et la durée de l’opération que vous souhaitez réaliser, MakaePop vous accompagne depuis la recherche du lieu, la négociation avec les relais immobiliers, puis l’aménagement avec des équipes d’architectes, décorateurs, pour mettre en valeur vos produits juqu'au lancement du magasin avec des équipes de vente."
+							"Lancez un produit sur une courte durée, avec un lieu aménagé rien que vous et sans perdre de temps !"
+							"Lancer ou relancer son site de e-commerce en proposant des solutions différenciantes et innovantes pour toucher au mieux vos clients, pendant ce temps-la MakaePop s’occupe du magasin !"
 						]
 					}
 					{

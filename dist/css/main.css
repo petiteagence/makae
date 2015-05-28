@@ -320,6 +320,26 @@ a {
           flex: 1;
   min-width: 200px; }
 
+/* Debug */
+.debug .bloc, .debug .item {
+  border: 3px solid red;
+  position: relative; }
+
+.debug .item {
+  border-color: green; }
+
+.debug .bloc:after, .debug .item:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(debug);
+  background: red;
+  color: #fff;
+  font-size: 10px; }
+
+.debug .item:after {
+  background: green; }
+
 /* theme_orange
 ---------------------------------------*/
 .theme_orange {
@@ -464,17 +484,13 @@ a {
   border: 1px solid red;
   padding: 10px; }
 
-.bloc_box3D .box_orange .box_img {
-  background: #f37422; }
-
 .bloc_box3D .box_orange .box_info {
-  background: #f9b990; }
-
-.bloc_box3D .box_prune .box_img {
-  background: #7f1b53; }
+  background: #f37422;
+  color: #fce3d2; }
 
 .bloc_box3D .box_prune .box_info {
-  background: #bf8da9; }
+  background: #7f1b53;
+  color: #e5d1dc; }
 
 /* Footer
 ---------------------------------------*/

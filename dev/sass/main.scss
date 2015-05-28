@@ -154,6 +154,14 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 	.bloc{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
 	.item{display: block;margin:10px;background: transparentize(#fff, .8);padding: 10px;flex:1;min-width: 200px;}
+	
+	/* Debug */
+	%debug{border:3px solid red;position: relative}
+	.debug .bloc{@extend %debug}
+	.debug .item{@extend %debug; border-color:green}
+	%debug_after{position: absolute;top: 0;left: 0;content:attr(debug);background: red;color:#fff;font-size: 10px}
+	.debug .bloc:after{@extend %debug_after;}
+	.debug .item:after{@extend %debug_after;background: green;}
 
 
 /* theme_orange
@@ -227,12 +235,12 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);border: 1px solid red;padding: 10px}
 
 		.box_orange{
-			.box_img{background:$c_orange}
-			.box_info{background:mix($c_orange, #fff);}
+			.box_img{}
+			.box_info{background:$c_orange;color:mix($c_orange, #fff,20%);}
 		}
 		.box_prune{
-			.box_img{background:$c_prune}
-			.box_info{background:mix($c_prune, #fff);}
+			.box_img{}
+			.box_info{background:$c_prune;color:mix($c_prune, #fff,20%);}
 		}
 
 

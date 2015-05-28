@@ -21,7 +21,12 @@ module.exports = (grunt) ->
 
 
 		clean:
-			all: ["dist/*", "!dist/img", "!dist/logo", "!dist/fonts"]
+			all: ["dist/css/*", "dist/js/*", "dist/*.html"]
+
+		copy:
+			all:
+				src: 'dev/contactform.html'
+				dest: 'dist/contactform.html'
 
 
 		jshint:
@@ -48,6 +53,13 @@ module.exports = (grunt) ->
 					data: () -> JSON.parse(myDataJson)
 				files:
 					"dist/index.html": ["dev/index.jade"]
+
+		vulcanize:
+			default:
+				# options:
+				files:
+					'dist/index.html': 'dist/index.html'
+
 
 
 
@@ -105,17 +117,17 @@ module.exports = (grunt) ->
 
 
 		grunt.registerTask 'server', [
-			'clean', 'jade',
+			'clean', 'copy', 'jade',
 			'jshint', 'removelogging', 'uglify',
-			'sass', 'autoprefixer', 'cssmin',
+			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
 			'connect', 'watch'
 		]
 		grunt.registerTask 'build', [
-			'clean', 'jade',
-			# 'jshint', 'removelogging', 'uglify',
-			'sass', 'autoprefixer', 'cssmin',
+			'clean', 'copy', 'jade', 
+			'jshint', 'removelogging', 'uglify',
+			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
 		]
 		grunt.registerTask 'heroku', [
-			'clean', 'jade',
+			'clean', 'copy', 'jade',
 			'sass', 'autoprefixer', 'cssmin',
 		]
