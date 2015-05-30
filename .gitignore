@@ -7,6 +7,7 @@ node_modules
 _docs/
 .sass-cache
 secret-config.json
+dist/img/
 dist/index.html
 dist/contactform.html
 dist/css
