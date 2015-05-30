@@ -72,7 +72,7 @@ Element providing solution to no problem in particular.
         Polymer({
             created: function () {
                 // initialize item object
-                this.item = {name:"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",email:"aze@aze.aze",subject:"aze",message:"aze"};
+                // this.item = {name:"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",email:"aze@aze.aze",subject:"aze",message:"aze"};
             },
             /**
              * This method validates the values entered by the user
@@ -97,13 +97,6 @@ Element providing solution to no problem in particular.
                 var company = this.item.company;
                 var message = this.item.message;
                 if (this.validate()) {
-                    // // this.$.ajax.param = {"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO":"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"};
-                    // // this.$.ajax.params = {"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO":"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"};
-                    // // this.$.ajax.body = '{"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO":"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"}';
-                    // // this.$.ajax.body = JSON.stringify(this.item);
-                    // this.$.ajax.body = JSON.stringify(this.item);
-                    // // console.log(this.$.ajax);
-                    // // console.log(this.$.ajax.body);
                     this.$.ajax.params =  JSON.stringify(this.item);
                     this.$.ajax.go();
                 }

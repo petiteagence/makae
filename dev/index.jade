@@ -5,12 +5,12 @@
 
 - var markup = function(text){
 -   if(!text) return '';
-- 	text = text.replace(/\[saut\]/, '<br>');
-- 	text = text.replace(/\[gras\|([^\]]*)\]/, '<strong>$1</strong>');
-- 	text = text.replace(/\[italique\|([^\]]*)\]/, '<em>$1</em>');
-- 	text = text.replace(/\[petit\|([^\]]*)\]/, '<small>$1</small>');
-- 	text = text.replace(/\[lien\|([^\|]*)\|([^\]]*)\]/, '<a href="$2">$1</a>');
-- 	text = text.replace(/\[ancre\|([^\|]*)\|([^\]]*)\]/, '<a href="#$2">$1</a>');
+- 	text = text.replace(/\[saut\]/g, '<br>');
+- 	text = text.replace(/\[gras ?\| ?([^\]]*)\]/g, '<strong>$1</strong>');
+- 	text = text.replace(/\[italique ?\| ?([^\]]*)\]/g, '<em>$1</em>');
+- 	text = text.replace(/\[petit ?\| ?([^\]]*)\]/g, '<small>$1</small>');
+- 	text = text.replace(/\[lien ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="$2">$1</a>');
+- 	text = text.replace(/\[ancre ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="#$2">$1</a>');
 - 	return text
 - }
 

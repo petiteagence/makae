@@ -133,7 +133,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.layer_bg{bottom:0;}
 		&{text-align: center;}
 		h2{
-			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin}
+			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
 			// .l1 *, .l2 *{@extend %dib}
 			small{color:$c_violet;font-size: 55%}
 			strong{color:$c_violet;font-size: 145%}
@@ -153,7 +153,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
 	.bloc{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
-	.item{display: block;margin:10px;background: transparentize(#fff, .8);padding: 10px;flex:1;min-width: 200px;}
+	.item{display: block;margin:10px;padding: 10px;flex:1;min-width: 200px;} // background: transparentize(#fff, .8);
 	
 	/* Debug */
 	%debug{border:3px solid red;position: relative}
@@ -190,8 +190,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* Styles de contenus
 ---------------------------------------*/
 	.bloc_titre{
-		h3{font-size: 230%;text-align: center;font-family: $ff_Josefin}
-		h4{font-size: 160%;text-align: center;font-family: $ff_Josefin}
+		&{text-align: center;font-family: $ff_Josefin}
+		h3{font-size: 230%;}
+		h4{font-size: 160%;}
 	}
 	.bloc_image{
 		&{text-align: center;}
@@ -232,7 +233,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.box_img,.box_info{position: absolute;width: $w_box3D;height: $h_box3D;background-color: #fff;backface-visibility: hidden;}
 		.box_img{transform: translateZ($w_box3D/2);background-size: cover;background-repeat: no-repeat;}
 		.box_img img{width: 100%}
-		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);border: 1px solid red;padding: 10px}
+		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);padding: 10px}
 
 		.box_orange{
 			.box_img{}

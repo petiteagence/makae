@@ -254,7 +254,8 @@ a {
   text-transform: uppercase;
   color: #FFF;
   margin-bottom: 50px;
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Josefin Sans", sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 
 .section-header h2 small {
   color: #7f1b53;
@@ -312,7 +313,6 @@ a {
 .item {
   display: block;
   margin: 10px;
-  background: rgba(255, 255, 255, 0.2);
   padding: 10px;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -359,15 +359,15 @@ a {
 
 /* Styles de contenus
 ---------------------------------------*/
-.bloc_titre h3 {
-  font-size: 230%;
+.bloc_titre {
   text-align: center;
   font-family: "Josefin Sans", sans-serif; }
 
+.bloc_titre h3 {
+  font-size: 230%; }
+
 .bloc_titre h4 {
-  font-size: 160%;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif; }
+  font-size: 160%; }
 
 .bloc_image {
   text-align: center; }
@@ -481,7 +481,6 @@ a {
 .bloc_box3D .box_info {
   -webkit-transform: rotateY(90deg) translateZ(150px);
           transform: rotateY(90deg) translateZ(150px);
-  border: 1px solid red;
   padding: 10px; }
 
 .bloc_box3D .box_orange .box_info {
