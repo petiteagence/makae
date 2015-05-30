@@ -20,12 +20,12 @@ app.post('/contact', function (req, res) {
 	});
 
 	// Mail setup
-	var mailOpts = {
-		from: req.body.name + ' <' + req.body.email + '>', //grab form data from the request body object
-		to: process.env.MAILBOXLOGIN,
-		subject: 'Website contact form',
-		text: req.body.message
-	};
+	// var mailOpts = {
+	// 	from: req.body.name + ' <' + req.body.email + '>', //grab form data from the request body object
+	// 	to: process.env.MAILBOXLOGIN,
+	// 	subject: 'Website contact form',
+	// 	text: req.body.message
+	// };
 
 	console.log(mailOpts);
 	console.log('---------------------------------------------------------');
@@ -48,8 +48,8 @@ app.post('/contact', function (req, res) {
 	// setup e-mail data with unicode symbols
 	var mailOptions = {
 	    from: req.body.name + ' <' + req.body.email + '>', // sender address
-	    to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-	    subject: 'Hello ✔', // Subject line
+	    to: process.env.MAILBOXLOGIN, // list of receivers
+	    subject: req.body.subject, // Subject line
 	    text: req.body.message, // plaintext body
 	    html: '<p>'+req.body.message+'</p>' // html body
 	};
