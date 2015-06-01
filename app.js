@@ -18,13 +18,23 @@ app.post('/contact', function (req, res) {
 	    auth: { user: process.env.MAILBOXLOGIN, pass: process.env.MAILBOXPASSWORD }
 	});
 
+	var message = [];
+	message.push('<p>');
+	if(req.body.subject)
+		message.push('	<strong>'+req.body.subject+'</strong>');
+	message.push('	<br>');
+	message.push('	<em>De la part de : '+req.body.name+' ('+req.body.email+')</em>');
+	message.push('	<br><br>');
+	message.push('	<blockquote>'+req.body.message+'</blockquote>');
+	message.push('</p>');
+
 	// setup e-mail data with unicode symbols
 	var mailOptions = {
-	    from: req.body.name + ' <' + req.body.email + '>', // sender address
-	    to: process.env.MAILBOXLOGIN, // list of receivers
-	    subject: req.body.subject, // Subject line
-	    text: req.body.message, // plaintext body
-	    html: '<p>'+req.body.message+'</p>' // html body
+	    from: process.env.MAILBOXLOGIN,
+	    replyTo: req.body.email,
+	    to: process.env.MAILBOXLOGIN,
+	    subject: req.body.name+' - '+(req.body.subject || 'Formulaire de contact makae.fr'),
+	    html: message.join('')
 	};
 
 	// send mail with defined transport object

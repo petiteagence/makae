@@ -118,13 +118,13 @@ module.exports = (grunt) ->
 
 		grunt.registerTask 'server', [
 			'clean', 'copy', 'jade',
-			'jshint', 'removelogging', 'uglify',
+			# 'jshint', 'removelogging', 'uglify',
 			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
 			'connect', 'watch'
 		]
 		grunt.registerTask 'build', [
 			'clean', 'copy', 'jade', 
-			'jshint', 'removelogging', 'uglify',
+			# 'jshint', 'removelogging', 'uglify',
 			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
 		]
 		grunt.registerTask 'heroku', [

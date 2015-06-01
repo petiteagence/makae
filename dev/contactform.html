@@ -21,7 +21,7 @@ Element providing solution to no problem in particular.
         <div>
             <form name="contactForm">
                 <div>
-                    <paper-input-decorator id="nameDec" label="Name" floatingLabel error="Required!">
+                    <paper-input-decorator id="nameDec" label="Nom complet" floatingLabel error="Required!">
                         <input id="nameIn" value="{{item.name}}" is="core-input" required>
                     </paper-input-decorator>
                 </div>
@@ -31,12 +31,12 @@ Element providing solution to no problem in particular.
                     </paper-input-decorator>
                 </div>
                 <div>
-                    <paper-input-decorator id="subjectDec" label="Subject" floatingLabel error="Required!">
-                        <input id="subjectIn" value="{{item.subject}}" is="core-input" required>
+                    <paper-input-decorator id="subjectDec" label="Sujet" floatingLabel>
+                        <input id="subjectIn" value="{{item.subject}}" is="core-input">
                     </paper-input-decorator>
                 </div>
                 <div>
-                    <paper-input-decorator id="companyDec" label="Company" floatingLabel>
+                    <paper-input-decorator id="companyDec" label="Société" floatingLabel>
                         <input id="companyIn" value="{{item.company}}" is="core-input">
                     </paper-input-decorator>
                 </div>
