@@ -195,59 +195,56 @@ sections: [
 			}
 		]
 	}
-	{
-		id: "contact"
-		theme: "blanc"
-		blocs: [
-			{
-				type: "titre"
-				titre: "Qui se cache derrière Makae ?"							
-				soustitre: "[italique | Agnès Lachenal]" 
-			}
-			{	
-				type: "textes"
-				items: [	
-					{	
-						texte : "L’événementiel est dans mes pensées depuis longtemps : 12 années riches d'enseignements auprès de clients innovants et exigeants dans l’IT m’ont donné envie de relever un nouveau défi : j’ai suivi une formation de gestion de projet événementiel pour créer ensuite Makae. [saut] Comme je bouillonne d’idées et d’envie de faire vivre de belles expériences à mes clients, je lance 2 offres événementielles : [saut] L’une pour les entreprises et leurs salariés : MakaEvent cherche les bonnes réponses pour faire vivre le meilleur de l’événementiel à ses clients. La qualité du traiteur, un micro qui fonctionne, les petites attentions pour les salariés, une organisation sans faille pour plus de tranquillité et toujours un événementiel qui donne du sens… ; tout ce qui fera rêver les salariés. [saut] L’autre pour les entreprises et le grand public : MakaePop se distingue par sa volonté de faire vivre des événements plus centrés sur l’humain dans le monde du « retail » . Tout e-commerçant peut avoir besoin de se lancer In-Real-Life, sans pour autant prendre un bail à temps plein. L’expérience du magasin éphémère est alors LA solution ! L’idée de MakaePop est donc venue tout naturellement. Et comme chez MakaEvent, la qualité des partenaires est sa force."
-						imageUrl: "http://placehold.it/120x150"
-						imageAlt: "Alt de l'image"
-						imageLien: "http://www.google.fr"
-						imageLegende: "agnes"
-						imagePosition: "dessus"	
-					}
-				]
-			}
-		]
-	}
 ]
+contact:
+	blocs: [
+		{
+			type: "titre"
+			titre: "Qui se cache derrière Makae ?"							
+			soustitre: "[italique | Agnès Lachenal]" 
+		}
+		{	
+			type: "textes"
+			items: [	
+				{	
+					texte : "L’événementiel est dans mes pensées depuis longtemps : 12 années riches d'enseignements auprès de clients innovants et exigeants dans l’IT m’ont donné envie de relever un nouveau défi : j’ai suivi une formation de gestion de projet événementiel pour créer ensuite Makae. [saut] Comme je bouillonne d’idées et d’envie de faire vivre de belles expériences à mes clients, je lance 2 offres événementielles : [saut] L’une pour les entreprises et leurs salariés : MakaEvent cherche les bonnes réponses pour faire vivre le meilleur de l’événementiel à ses clients. La qualité du traiteur, un micro qui fonctionne, les petites attentions pour les salariés, une organisation sans faille pour plus de tranquillité et toujours un événementiel qui donne du sens… ; tout ce qui fera rêver les salariés. [saut] L’autre pour les entreprises et le grand public : MakaePop se distingue par sa volonté de faire vivre des événements plus centrés sur l’humain dans le monde du « retail » . Tout e-commerçant peut avoir besoin de se lancer In-Real-Life, sans pour autant prendre un bail à temps plein. L’expérience du magasin éphémère est alors LA solution ! L’idée de MakaePop est donc venue tout naturellement. Et comme chez MakaEvent, la qualité des partenaires est sa force."
+					imageUrl: "http://placehold.it/120x150"
+					imageAlt: "Alt de l'image"
+					imageLien: "http://www.google.fr"
+					imageLegende: "agnes"
+					imagePosition: "dessus"	
+				}
+			]
+		}
+	]
 footer:
 	blocs: [
-			{
-				type: "textes"
-				items: [
-					{
-						liste: [
-							"[lien|Papilles&Papillons, ambiancistes et décoratrices événementielles.|http://www.papillesetpapillons.com]"
-							"[lien|Centre de formation événementielle, spectacles. | http://www.abricot-formation.com]"
-						]
-					}
-					{
-						liste: [
-							"[lien|Linkedin.|https://fr.linkedin.com/in/agneslachenal]"
-							"[lien|Viadeo.|http://www.viadeo.com/profile/00219tdkrrgclzwx?readOnly=&language=fr&currentab=resume]"
-						]
-					}
-					{
-						liste: [
-							"[lien|Bedouk.|http://www.google.fr]"
-							"[lien|LSA.|http://www.google.fr]"
-							"[lien|BEPUB.|http://www.google.fr]"
-						]
-					}
-					{
-						titre: "mentions légales"
-						texte: ""
-					}
-				]
-			}
-		]
+		{
+			type: "textes"
+			items: [
+				{
+					liste: [
+						"[lien|Papilles&Papillons, ambiancistes et décoratrices événementielles.|http://www.papillesetpapillons.com]"
+						"[lien|Centre de formation événementielle, spectacles. | http://www.abricot-formation.com]"
+					]
+				}
+				{
+					liste: [
+						"[lien|Linkedin.|https://fr.linkedin.com/in/agneslachenal]"
+						"[lien|Viadeo.|http://www.viadeo.com/profile/00219tdkrrgclzwx?readOnly=&language=fr&currentab=resume]"
+					]
+				}
+				{
+					liste: [
+						"[lien|Bedouk.|http://www.google.fr]"
+						"[lien|LSA.|http://www.google.fr]"
+						"[lien|BEPUB.|http://www.google.fr]"
+					]
+				}
+				{
+					titre: "mentions légales"
+					texte: ""
+				}
+			]
+		}
+	]

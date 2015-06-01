@@ -95,6 +95,7 @@ html(lang="fr")
 	include jade/head
 
 body
+	paper-toast#toast(text="Your message has been sent. Thank you for contacting us!")
 
 	div.page
 
@@ -121,7 +122,8 @@ body
 						.titre Formulaire de contact
 						contact-form
 					.item
-		
+						for bloc in contact.blocs
+							+render(bloc)
 
 		footer.section.section-footer
 			a(name='footer')
