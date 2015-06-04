@@ -97,7 +97,7 @@ html(lang="fr")
 
 body
 	paper-toast#toast(text="Your message has been sent. Thank you for contacting us!")
-	.popups
+	.popups(visible="false")
 		for p in popups
 			.popup(id=p.id)
 				.popup_title
