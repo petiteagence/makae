@@ -11,6 +11,7 @@
 - 	text = text.replace(/\[petit ?\| ?([^\]]*)\]/g, '<small>$1</small>');
 - 	text = text.replace(/\[lien ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="$2">$1</a>');
 - 	text = text.replace(/\[ancre ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="#$2">$1</a>');
+- 	text = text.replace(/ (\?|!)/g, '&nbsp;$1');
 - 	return text
 - }
 
@@ -30,9 +31,9 @@ mixin render(bloc)
 mixin render_titre(bloc)
 	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
 		div.item(debug='item_titre')
-			h1!= markup(bloc.titre)
+			h3!= markup(bloc.titre)
 			if bloc.soustitre
-				h2.item(debug='item_soustitre')!= markup(bloc.soustitre)
+				h4!= markup(bloc.soustitre)
 
 mixin render_image(bloc)
 	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
@@ -46,14 +47,14 @@ mixin render_textes(bloc)
 		for i in bloc.items
 			if i.lien
 				if i.liste
-					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste'): +render_blocItem_liste(i)
+					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1)): +render_blocItem_liste(i)
 				else
-					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte'): +render_blocItem_texte(i)
+					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1)): +render_blocItem_texte(i)
 			else
 				if i.liste
-					.item.liste(debug='item_liste'): +render_blocItem_liste(i)
+					.item.liste(class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1)): +render_blocItem_liste(i)
 				else
-					.item.texte(debug='item_texte'): +render_blocItem_texte(i)
+					.item.texte(class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1)): +render_blocItem_texte(i)
 			
 
 
@@ -96,7 +97,15 @@ html(lang="fr")
 
 body
 	paper-toast#toast(text="Your message has been sent. Thank you for contacting us!")
-
+	.popups
+		for p in popups
+			.popup(id=p.id)
+				.popup_title
+					h5!= markup(p.titre)
+					a.popup_close &times;
+				.popup_inner
+					.popup_texte
+						p!= markup(p.texte)
 	div.page
 
 		header.section.section-header
@@ -133,3 +142,12 @@ body
 
 		script.
 			if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
+			document.querySelector('.popup_close').addEventListener('click', function(){
+				console.log('[PopupClose click => visible=false]');
+				this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
+			});
+			document.querySelector('[href*="#popup"]').addEventListener('click', function(){
+				var popup = this.getAttribute('href');
+				console.log('[PopupLink click => visible=true]', popup);
+				document.querySelector(popup).parentNode.setAttribute('visible', 'true');
+			});

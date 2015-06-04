@@ -110,7 +110,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* LAYOUT
 ---------------------------------------*/
 	body{overflow: hidden;font-family: $ff_Lato; font-size: 16px}
-	h1, h2, h3, h4{margin: 0;padding:0}
+	h1, h2, h3, h4, h5{margin: 0;padding:0}
 	p{margin: 0}
 	a{
 		color:inherit;
@@ -123,7 +123,18 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.layer_fg{transform: translateZ(0);}
 	.layer_bg{@extend %fullbleed;top: -100%;bottom: -100%;background-position: 100% 50%;background-size: cover;transform: translateZ(-100px) scale(2);}
 
-
+/* POPUP
+---------------------------------------*/
+.popups{
+	@extend %fullbleed;position: fixed;z-index: 10;background: rgba(0,0,0,.5);;
+	&[visible=false]{display: none;}
+	.popup{position: absolute;left: 20%;right: 20%;top: 20%;bottom: 20%;background: #fff;border-radius: 4px;box-shadow: 0 0 15px rgba(0,0,0,.5);}
+		.popup_title{background-color: #F5F5F5;border-radius: 4px 4px 0 0;height: 10%;display: flex;justify-content:space-between;align-items:center;overflow: hidden}
+			.popup_close{font-size: 27px;cursor: pointer;text-align: center;width: 30px;}
+			h5{padding: 8px;font-size: 100%;flex:1}
+		.popup_inner{height: 90%;padding: 20px;}
+			.popup_texte{overflow-y: scroll;height: 100%;padding: 20px;border:1px solid #eee}
+}
 
 
 /* header
@@ -154,14 +165,20 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 	.bloc{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
 	.item{display: block;margin:10px;padding: 10px;flex:1;min-width: 200px;} // background: transparentize(#fff, .8);
+	.item[flex="2"]{flex:2}
+	.item[flex="3"]{flex:3}
+	.item[flex="4"]{flex:4}
+	.item[flex="5"]{flex:5}
 	
 	/* Debug */
 	%debug{border:3px solid red;position: relative}
-	.debug .bloc{@extend %debug}
-	.debug .item{@extend %debug; border-color:green}
-	%debug_after{position: absolute;top: 0;left: 0;content:attr(debug);background: red;color:#fff;font-size: 10px}
-	.debug .bloc:after{@extend %debug_after;}
-	.debug .item:after{@extend %debug_after;background: green;}
+	%debug_style{color:#fff;font-size: 12px;font-family: monospace;}
+	%debug_after{position: absolute;top: 0;left: 0;content:attr(debug);}
+	.debug .bloc[debug]{@extend %debug}
+	.debug .item[debug]{@extend %debug; border-color:green}
+	.debug .bloc[debug]:after{@extend %debug_after;background: red;@extend %debug_style}
+	.debug .item[debug]:after{@extend %debug_after;background: green;@extend %debug_style}
+	.debug .item[flex]:before{position: absolute;bottom: 0;right: 0;content:"size " attr(flex);background: green;@extend %debug_style}
 
 
 /* theme_orange
