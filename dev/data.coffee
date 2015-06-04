@@ -147,16 +147,20 @@ sections: [
 				type: "textes"
 				items: [
 					{
-						texte: "Ensemble, nous définissons [saut] vos besoins, votre situation, vos attentes, votre contexte [saut] qui feront que votre événement sera différent de tous les autres",
+						texte: "Ensemble, nous définissons [saut] vos besoins, votre situation, vos attentes, votre contexte [saut] qui feront que votre événement sera différent de tous les autres"
+						style: "item_fondclair"
 					}
 					{
-						texte: "Vivre un moment unique avec une organisation de qualité, [saut] un réseau de partenaires de confiance, des idées originales.",
+						texte: "Vivre un moment unique avec une organisation de qualité, [saut] un réseau de partenaires de confiance, des idées originales."
+						style: "item_fondclair"
 					}
 					{
-						texte: "Et parce qu’un événement de cette nature ne dure pas qu’une journée, nous vous proposons de suivre les effets dans votre entreprise après l’événement, au travers d’un suivi qualité.",
+						texte: "Et parce qu’un événement de cette nature ne dure pas qu’une journée, nous vous proposons de suivre les effets dans votre entreprise après l’événement, au travers d’un suivi qualité."
+						style: "item_fondclair"
 					}
 					{
 						texte: "Autant d'options que vous le souhaitez : [saut] conception de l’événement [saut] + réalisation / coordination des partenaires [saut] + gestion de projet le jour J [saut] + suivi qualité a posteriori.",
+						style: "item_fondclair"
 					}
 				]
 			}
@@ -230,12 +234,14 @@ footer:
 						"[lien|Abricot Formation, centre de formation événementielle, spectacles. | http://www.abricot-formation.com]"
 					]
 					size: 2
+					style: "item_fondclair"
 				}
 				{
 					liste: [
 						"[lien|Linkedin.|https://fr.linkedin.com/in/agneslachenal]"
 						"[lien|Viadeo.|http://www.viadeo.com/profile/00219tdkrrgclzwx?readOnly=&language=fr&currentab=resume]"
 					]
+					style: "item_fondclair"
 				}
 				{
 					liste: [
@@ -243,10 +249,12 @@ footer:
 						"[lien|LSA.|http://www.google.fr]"
 						"[lien|BEPUB.|http://www.google.fr]"
 					]
+					style: "item_fondclair"
 				}
 				{
 					titre: "mentions légales"
 					texte: "[lien|Mentions légales|#popup_mentionlegales]"
+					style: "item_fondclair"
 				}
 			]
 		}

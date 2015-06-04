@@ -47,14 +47,14 @@ mixin render_textes(bloc)
 		for i in bloc.items
 			if i.lien
 				if i.liste
-					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1)): +render_blocItem_liste(i)
+					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1), class=i.style || false): +render_blocItem_liste(i)
 				else
-					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1)): +render_blocItem_texte(i)
+					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1), class=i.style || false): +render_blocItem_texte(i)
 			else
 				if i.liste
-					.item.liste(class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1)): +render_blocItem_liste(i)
+					.item.liste(class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1), class=i.style || false): +render_blocItem_liste(i)
 				else
-					.item.texte(class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1)): +render_blocItem_texte(i)
+					.item.texte(class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1), class=i.style || false): +render_blocItem_texte(i)
 			
 
 
