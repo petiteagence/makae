@@ -12,3 +12,4 @@ dist/index.html
 dist/contactform.html
 dist/css
 dist/js
+dev/data.coffee
