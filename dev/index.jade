@@ -204,18 +204,16 @@ body
 				for bloc in footer.blocs
 					+render(bloc)
 
-		if preprod
-			script.
-				if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
-				document.querySelector('.popup_close').addEventListener('click', function(){
-					console.log('[PopupClose click => visible=false]');
-					this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
-				});
-				document.querySelector('[href*="#popup"]').addEventListener('click', function(){
-					var popup = this.getAttribute('href');
-					console.log('[PopupLink click => visible=true]', popup);
-					document.querySelector(popup).parentNode.setAttribute('visible', 'true');
-				});
+		script.
+			document.querySelector('.popup_close').addEventListener('click', function(){
+				console.log('[PopupClose click => visible=false]');
+				this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
+			});
+			document.querySelector('[href*="#popup"]').addEventListener('click', function(){
+				var popup = this.getAttribute('href');
+				console.log('[PopupLink click => visible=true]', popup);
+				document.querySelector(popup).parentNode.setAttribute('visible', 'true');
+			});
 
 		if prod
 			script.
@@ -225,4 +223,8 @@ body
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 				ga('create', 'UA-63814857-1', 'auto');
 				ga('send', 'pageview');
+
+		if preprod
+			script.
+				if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
 
