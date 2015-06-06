@@ -58,6 +58,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
     font-weight: normal;
     font-style: normal;
 }
+.section-header h2{font-family: $ff_Josefin;font-size: 44px;line-height: 52px;letter-spacing: 1px}
+.bloc_titre{       font-family: $ff_Josefin;font-size: 17px;line-height: 38px;letter-spacing: 4px}
+.page{             font-family: $ff_Quicksand;font-size: 14px;line-height: 17px;letter-spacing: 0px}
 
 /* General
 ---------------------------------------*/
@@ -123,7 +126,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
 	.section{position: relative;overflow: hidden;}
 	.layer_fg{transform: translateZ(0);}
-	.layer_bg{@extend %fullbleed;top: -100%;bottom: -100%;background-position: 100% 50%;background-size: cover;transform: translateZ(-100px) scale(2);}
+	.layer_bg{@extend %fullbleed;top: -100%;bottom: 60%;background-position: 100% 100%;background-size: cover;transform: translateZ(-100px) scale(2);}
 
 /* POPUP
 ---------------------------------------*/
@@ -143,7 +146,6 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 ---------------------------------------*/
 	.section-header{
 		&{padding: 60px 0;}
-		.layer_bg{bottom:0;}
 		&{text-align: center;}
 		h2{
 			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
@@ -211,13 +213,14 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* Styles de contenus
 ---------------------------------------*/
 	.bloc_titre{
-		&{text-align: center;font-family: $ff_Josefin}
+		&{text-align: center;font-family: $ff_Josefin;padding: 60px 0;}
 		h3{font-size: 230%;}
 		h4{font-size: 160%;}
 	}
 	.bloc_image{
 		&{text-align: center;}
-		img{max-width: 100%;box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);border-radius: 2px;}
+		img{max-width: 100%;border-radius: 2px;}
+		img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
 		figcaption{}
 	}
 	.bloc_textes{
@@ -233,7 +236,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.dessous{text-align: center}
 
 		.image{display: inline-block;}
-		.image img{vertical-align: top;box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);border-radius: 2px;}
+		.image img{vertical-align: top;border-radius: 2px;}
+		.image img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
 		.dessus .image{margin-bottom: $p_paragraphe}
 		.dessous .image{margin-top: $p_paragraphe}
 		.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
@@ -243,8 +247,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 	.bloc_box3D{
 		&{}
-		.boxes{@extend %ulr}
-		.w_box{width: $w_box3D;height: $h_box3D;margin: 30px;float: left;perspective: 1000px;}
+		.boxes{@extend %ulr;  display: flex;flex-wrap: wrap;justify-content: center;}
+		.w_box{width: $w_box3D;height: $h_box3D;margin: 30px;perspective: 1000px;}
 		.box{width: $w_box3D;height: $h_box3D;display: block;transform-style: preserve-3d;transform: translateZ(- $w_box3D/2);transition: transform 350ms;}
 		.box::after{content: '';width: $w_box3D;height: $w_box3D;position: absolute;bottom: 0;box-shadow: 0 30px 50px rgba(0,0,0,0.3);transform-origin: 100% 100%;transform: rotateX(90deg) translateY($w_box3D/2);transition: box-shadow 350ms;}
 
@@ -254,7 +258,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.box_img,.box_info{position: absolute;width: $w_box3D;height: $h_box3D;background-color: #fff;backface-visibility: hidden;}
 		.box_img{transform: translateZ($w_box3D/2);background-size: cover;background-repeat: no-repeat;}
 		.box_img img{width: 100%}
-		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);padding: 10px}
+		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);padding: 10px;text-align: center}
 
 		.box_orange{
 			.box_img{}
@@ -282,3 +286,11 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.section-footer{background: #555;color:#fff;}
 
 
+
+
+
+/* MQ
+---------------------------------------*/
+@media only screen and (max-width: 700px){
+	.popups .popup{left: 5%;right: 5%;top: 5%;bottom: 5%;}
+}
