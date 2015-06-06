@@ -4,9 +4,13 @@ coffeeson = require('coffeeson');
 fs = require('fs')
 require.extensions['.coffee'] = (module, filename) -> module.exports = fs.readFileSync(filename, 'utf8')
 
-# Récupération du JSON depuis le coffee
+# Récupération du JSON depuis le coffee, ajout de l'environnement dans le JSON pour avoir du code de débug en preprod uniquement
 myDataCoffee = require('./dev/data.coffee')
-myDataJson = coffeeson.toJSON.pretty myDataCoffee.toString(), (err, result) -> result
+myEnv = ''
+myEnv += if process.env.ENV == 'preprod' then 'preprod: true\n' else 'preprod: false\n'
+myEnv += if process.env.ENV == 'prod' then 'prod: true\n' else 'prod: false\n'
+myDataWithEnv = myDataCoffee.toString()+'\n'+myEnv
+myDataJson = coffeeson.toJSON.pretty myDataWithEnv, (err, result) -> result
 
 
 # Grunt tasks

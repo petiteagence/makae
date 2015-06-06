@@ -86,14 +86,14 @@ sections: [
 					{
 						texte: "MakaEvent : [saut] Une direction événementielle externalisée [saut] La solution de coordination d’événements pour les petites et moyennes entreprises",
 						imageUrl: "box_event.png"
-						imageAlt: "Alt de l'image"
+						imageAlt: "event_box"
 						themeBox: "prune"
 						lien: "makaevent"
 					}
 					{
 						texte: "MakaePop : [saut] La solution d'aménagement de magasin éphémère sur mesure pour e-commerçants et créateurs en centre ville",
 						imageUrl: "box_pop.png"
-						imageAlt: "Alt de l'image"
+						imageAlt: "Store"
 						themeBox: "orange"
 						lien: "makaepop"
 					}
@@ -103,6 +103,7 @@ sections: [
 	}
 	{
 		id: "makaevent"
+		image: "etincelles.jpg"
 		theme: "prune"
 		blocs: [
 			{
@@ -111,33 +112,24 @@ sections: [
 				soustitre: "Nous organisons des événements éphémères qui durent longtemps",
 			}
 			{
-				type: "image"
-				imageUrl: "etincelles.jpg"
-				imageAlt: "Alt de l'image"
-				imageLegende: "Etincelles"
-			}
-			{
 				type: "textes"
 				items: [
 					{
-						texte: "La réponse pour les entreprises qui veulent stabiliser leurs effectifs, les motiver, en faire des collaborateurs impliqués pour leur société.",
+						texte: "La réponse pour les entreprises qui veulent [saut] stabiliser leurs effectifs, les motiver, [saut] en faire des collaborateurs impliqués pour leur société.",
 						imageUrl: "esperluette.jpg"
 						imageAlt: "Alt de l'image"
-						imageLegende: "Et"
 						imagePosition: "dessus"
 					}
 					{
-						texte: "La réponse pour les entreprises qui attendent une relation différente avec leurs clients, en partageant des valeurs, une  culture, et des ambitions.",
+						texte: "La réponse pour les entreprises qui attendent [saut] une relation différente avec leurs clients, en partageant des valeurs, [saut] une  culture, et des ambitions.",
 						imageUrl: "egaler-multiplier.jpg"
 						imageAlt: "Alt de l'image"
-						imageLegende: "Egaler et multiplier"
 						imagePosition: "dessus"
 					}
 					{
-						texte: "Vous êtes en train de vivre un moment important dans la vie de votre entreprise, vous venez de vous développer rapidement, vous avez besoin de rapprocher vos collaborateurs ? [saut] Vous voulez partagez une relation de confiance avec vos clients ?[saut] [saut] MakaEvent [ancre|MakaEvent|contact] vous accompagne pour organiser l’événement qu’il vous faut.",
+						texte: "Vous vivez un moment important dans l'histoire de votre entreprise, [saut] vous venez de vous développer rapidement, vous avez besoin de rapprocher vos collaborateurs ? [saut] Vous voulez partagez une relation de confiance avec vos clients ?[saut] [saut] [ancre|MakaEvent|contact] vous accompagne pour organiser l’événement qu’il vous faut.",
 						imageUrl: "question.jpg"
 						imageAlt: "Alt de l'image"
-						imageLegende: "questions"
 						imagePosition: "dessus"
 						size: 2
 					}
@@ -147,15 +139,15 @@ sections: [
 				type: "textes"
 				items: [
 					{
-						texte: "Ensemble, nous définissons [saut] vos besoins, votre situation, vos attentes, votre contexte [saut] qui feront que votre événement sera différent de tous les autres"
+						texte: "Ensemble, nous définissons [saut] vos besoins, votre situation, vos attentes, votre contexte [saut] qui feront que votre événement sera différent de tous les autres",
 						style: "item_fondclair"
 					}
 					{
-						texte: "Vivre un moment unique avec une organisation de qualité, [saut] un réseau de partenaires de confiance, des idées originales."
+						texte: "Tout faire pour vous faire vivre un moment unique avec une organisation de qualité, [saut] un réseau de partenaires de confiance, des idées originales.",
 						style: "item_fondclair"
 					}
 					{
-						texte: "Et parce qu’un événement de cette nature ne dure pas qu’une journée, nous vous proposons de suivre les effets dans votre entreprise après l’événement, au travers d’un suivi qualité."
+						texte: "Et parce qu’un événement de cette nature ne dure pas qu’une journée, nous vous proposons de suivre les effets dans votre entreprise après l’événement, au travers d’un suivi qualité.",
 						style: "item_fondclair"
 					}
 					{
@@ -168,6 +160,7 @@ sections: [
 	}
 	{
 		id: "makaepop"
+		image: "store.jpg"
 		theme: "orange"
 		blocs: [
 			{
@@ -176,26 +169,19 @@ sections: [
 				soustitre: "Nous vous faisons gagner du temps !"
 			}
 			{
-				type: "image"
-				imageUrl: "open.jpg"
-				imageAlt: "Alt de l'image"
-				imageLegende: "open light"
-			}
-			{
 				type: "textes"
 				items: [
 					{
 						texte: "[gras | La solution ?] [saut] En proposant un aménagement éphémère adapté à tous types de produits"
-						imageUrl: "store.jpg"
+						imageUrl: "open.jpg"
 						imageAlt: "Alt de l'image"
-						imageLegende: "store light"
 						imagePosition: "dessous"
 					}
 					{
 						texte: "[gras | Pour qui ?] [saut] Pour les sites d’e-commerce qui souhaitent tenter l’aventure IRL. [saut] Pour des créateurs qui veulent rencontrer leurs clients. [saut][saut] Un produit à tester ? [saut] Une occasion saisonnière ? [saut] Une opération pour lancer une promotion ? [saut] Animer une opération click&collect ponctuelle et locale ?"
 					}	
 					{	
-						texte: "[gras | Comment ?] 1 Le brief sur vos produits, et le type d’opération que vous souhaitez réaliser, [saut][saut] 2 MakaePop vous accompagne sur la recherche du lieu, l’aménagement avec des équipes d’architectes, juqu'à l'animation du magasin par des équipes de vente, [saut][saut] 3 Notre rôle va jusqu'aux solutions pour marquer l'événement du lancement !",
+						texte: "[gras | Comment ?] 1 - Un échange avec vous pour définir le type d’opération souhaitée, [saut][saut] 2 - Nous recherchons le lieu, proposons l'aménagement avec des équipes d’architectes, jusqu'à l'animation du magasin par des équipes de vente, [saut][saut] 3 - Nous concevons aussi les solutions pour animer et faire connaître le lancement",
 					}
 				]
 			}
@@ -213,11 +199,10 @@ contact:
 			type: "textes"
 			items: [	
 				{	
-					texte : "L’événementiel est dans mes pensées depuis longtemps : 12 années riches d'enseignements auprès de clients innovants et exigeants dans l’IT m’ont donné envie de relever un nouveau défi : j’ai suivi une formation de gestion de projet événementiel pour créer ensuite Makae. [saut] Comme je bouillonne d’idées et d’envie de faire vivre de belles expériences à mes clients, je lance 2 offres événementielles : [saut] L’une pour les entreprises et leurs salariés : MakaEvent cherche les bonnes réponses pour faire vivre le meilleur de l’événementiel à ses clients. La qualité du traiteur, un micro qui fonctionne, les petites attentions pour les salariés, une organisation sans faille pour plus de tranquillité et toujours un événementiel qui donne du sens… ; tout ce qui fera rêver les salariés. [saut] L’autre pour les entreprises et le grand public : MakaePop se distingue par sa volonté de faire vivre des événements plus centrés sur l’humain dans le monde du « retail » . Tout e-commerçant peut avoir besoin de se lancer In-Real-Life, sans pour autant prendre un bail à temps plein. L’expérience du magasin éphémère est alors LA solution ! L’idée de MakaePop est donc venue tout naturellement. Et comme chez MakaEvent, la qualité des partenaires est sa force."
+					texte : "L’événementiel est dans mes pensées depuis longtemps : 12 années riches d'enseignements auprès de clients innovants et exigeants dans l’IT m’ont donné envie de relever un nouveau défi. [saut] J’ai suivi une formation de gestion de projet événementiel pour créer ensuite Makae. [saut] Comme je bouillonne d’idées et d’envie de faire vivre de belles expériences à mes clients, je lance 2 offres événementielles : [saut] une offre pour les entreprises et leurs salariés : MakaEvent cherche les bonnes réponses pour faire vivre le meilleur de l’événementiel à ses clients. La qualité du traiteur, un micro qui fonctionne, les petites attentions pour les salariés, une organisation sans faille pour plus de tranquillité et toujours un événementiel qui donne du sens… ; tout ce qui fera rêver les salariés. [saut] Une autre offre pour les entreprises et le grand public : MakaePop se distingue par sa volonté de faire vivre des événements plus centrés sur l’humain dans le monde du « retail » . Tout e-commerçant peut avoir besoin de se lancer In-Real-Life, sans pour autant prendre un bail à temps plein. L’expérience du magasin éphémère est alors LA solution ! L’idée de MakaePop est donc venue tout naturellement. Et comme chez MakaEvent, la qualité des partenaires est sa force."
 					imageUrl: "agnes.jpg"
 					imageAlt: "Alt de l'image"
 					imageLien: "http://www.google.fr"
-					imageLegende: "agnes"
 					imagePosition: "gauche"	
 				}
 			]
@@ -240,14 +225,6 @@ footer:
 					liste: [
 						"[lien|Linkedin.|https://fr.linkedin.com/in/agneslachenal]"
 						"[lien|Viadeo.|http://www.viadeo.com/profile/00219tdkrrgclzwx?readOnly=&language=fr&currentab=resume]"
-					]
-					style: "item_fondclair"
-				}
-				{
-					liste: [
-						"[lien|Bedouk.|http://www.google.fr]"
-						"[lien|LSA.|http://www.google.fr]"
-						"[lien|BEPUB.|http://www.google.fr]"
 					]
 					style: "item_fondclair"
 				}

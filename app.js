@@ -1,10 +1,12 @@
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var compress = require('compression');
 var nodemailer = require('nodemailer');
 var port = process.env.PORT || 3000;
 
 var app = express();
-app.use( bodyParser.json() );
+app.use(bodyParser.json());
+app.use(compress());
 app.use(bodyParser.urlencoded({extended: true}));
 
 

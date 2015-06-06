@@ -106,18 +106,82 @@ body
 				.popup_inner
 					.popup_texte
 						p!= markup(p.texte)
+
+	if preprod
+		div.fonts(style='color:#fff;position: absolute;z-index: 10;padding: 10px;top: 10px;right: 20px;background-color: rgba(0,0,0,0.3);font-size: 12px;width:300px')
+			.titre(style='background:#000;clear:both;padding:2px') Accroche
+			div
+				label letter-spacing
+				input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label line-height
+				input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label font-size
+				input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+
+			.titre(style='background:#000;clear:both;padding:2px') titres
+			div
+				label letter-spacing
+				input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label line-height
+				input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label font-size
+				input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+
+			.titre(style='background:#000;clear:both;padding:2px') textes
+			div
+				label letter-spacing
+				input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label line-height
+				input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			div
+				label font-size
+				input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+				span.value
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+			a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+		
+
 	div.page
 
 		header.section.section-header
 			a(name='header')
-			.layer_bg(style="background-image: url(img/"+header.image+")")
+			.layer_bg(style='background-image: url(img/'+header.image+')')
 			.layer_fg
 				include jade/header
 				//- include jade/nav
 			
 		
 		for section in sections
-			section.section(class='theme_'+section.theme)
+			section.section(class='theme_'+section.theme, style=(section.image)?'background-image: url(img/'+section.image+')':false)
 				a(name=section.id)
 				.section_maxwidth
 					for bloc in section.blocs
@@ -140,14 +204,25 @@ body
 				for bloc in footer.blocs
 					+render(bloc)
 
-		script.
-			if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
-			document.querySelector('.popup_close').addEventListener('click', function(){
-				console.log('[PopupClose click => visible=false]');
-				this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
-			});
-			document.querySelector('[href*="#popup"]').addEventListener('click', function(){
-				var popup = this.getAttribute('href');
-				console.log('[PopupLink click => visible=true]', popup);
-				document.querySelector(popup).parentNode.setAttribute('visible', 'true');
-			});
+		if preprod
+			script.
+				if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
+				document.querySelector('.popup_close').addEventListener('click', function(){
+					console.log('[PopupClose click => visible=false]');
+					this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
+				});
+				document.querySelector('[href*="#popup"]').addEventListener('click', function(){
+					var popup = this.getAttribute('href');
+					console.log('[PopupLink click => visible=true]', popup);
+					document.querySelector(popup).parentNode.setAttribute('visible', 'true');
+				});
+
+		if prod
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-63814857-1', 'auto');
+				ga('send', 'pageview');
+

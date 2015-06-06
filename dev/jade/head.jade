@@ -6,7 +6,10 @@ head
 	link(rel="stylesheet", href="css/main.css", inline="true")
 	//- script(src="js/main.js")
 	script(src="bower_components/webcomponentsjs/webcomponents.js")
-	link(href='https://fonts.googleapis.com/css?family=Lato:400,700|Josefin+Sans:300|Droid+Serif:400,700|Montserrat', rel='stylesheet', type='text/css')
+	if preprod
+		link(href='https://fonts.googleapis.com/css?family=Lato:400,700|Josefin+Sans:300|Droid+Serif:400,700|Montserrat|Alegreya+Sans+SC:300,400|Quicksand', rel='stylesheet', type='text/css')
+	if prod
+		link(href='https://fonts.googleapis.com/css?family=Lato:400,700|Josefin+Sans:300', rel='stylesheet', type='text/css')
 
 	link(rel="import", href="contactform.html")
 	link(rel="import", href="bower_components/paper-toast/paper-toast.html")

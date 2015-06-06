@@ -15,6 +15,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	$ff_Josefin:    'Josefin Sans', sans-serif;
 	$ff_Droid:      'Droid Serif', serif;
 	$ff_Montserrat: 'Montserrat', sans-serif;
+	$ff_Alegreyasc: 'Alegreya Sans SC', sans-serif;
+	$ff_Quicksand:  'Quicksand', sans-serif;
 	
 	$m_section: 40px;
 	$p_paragraphe: 10px;
@@ -160,6 +162,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* Sections
 ---------------------------------------*/
 	.section{
+		&{background: no-repeat center top;}
 		&_maxwidth{@extend %maw;margin-top: $m_section}
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
@@ -185,7 +188,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* theme_orange
 ---------------------------------------*/
 	.theme_orange{
-		&{background: $c_orange;color:#fff}
+		&{background-color: $c_orange;color:#fff}
 
 	}
 
@@ -193,15 +196,15 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* theme_blanc
 ---------------------------------------*/
 	.theme_blanc{
-		&{background: #fff;}
+		&{background-color: #fff;}
 
 	}
 	
 
 
-/* theme_violet
+/* theme_prune
 ---------------------------------------*/
-	.theme_prune{background: $c_violet;color:#fff}
+	.theme_prune{background-color: $c_violet;color:#fff}
 	.theme_prune .PRX_layer-2{}
 
 
@@ -214,7 +217,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 	.bloc_image{
 		&{text-align: center;}
-		img{max-width: 100%;}
+		img{max-width: 100%;box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);border-radius: 2px;}
 		figcaption{}
 	}
 	.bloc_textes{
@@ -230,7 +233,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.dessous{text-align: center}
 
 		.image{display: inline-block;}
-		.image img{vertical-align: top;}
+		.image img{vertical-align: top;box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);border-radius: 2px;}
 		.dessus .image{margin-bottom: $p_paragraphe}
 		.dessous .image{margin-top: $p_paragraphe}
 		.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
@@ -276,6 +279,6 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* Footer
 ---------------------------------------*/
-	footer{background: #555;color:#fff;}
+	.section-footer{background: #555;color:#fff;}
 
 
