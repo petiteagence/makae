@@ -119,7 +119,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* SECTIONS
 ---------------------------------------*/
 	.section{
-		&{background: no-repeat center top;}
+		&{background: no-repeat center top;overflow: hidden;}
 		&_maxwidth{@extend %maw;margin-top: $m_section}
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
