@@ -11,7 +11,7 @@
 - 	text = text.replace(/\[petit ?\| ?([^\]]*)\]/g, '<small>$1</small>');
 - 	text = text.replace(/\[lien ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="$2">$1</a>');
 - 	text = text.replace(/\[ancre ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="#$2">$1</a>');
-- 	text = text.replace(/ (\?|!)/g, '&nbsp;$1');
+- 	text = text.replace(/ (\?|!|:)/g, '&nbsp;$1');
 - 	return text
 - }
 
@@ -61,6 +61,8 @@ mixin render_textes(bloc)
 mixin render_blocItem_liste(i)
 	- if(i.imageUrl && i.imagePosition != "dessous")
 		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	if i.titre
+		strong.item_titre= i.titre
 	ul
 		for li in i.liste
 			li!= markup(li)
@@ -70,6 +72,8 @@ mixin render_blocItem_liste(i)
 mixin render_blocItem_texte(i)
 	- if(i.imageUrl && i.imagePosition != "dessous")
 		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	if i.titre
+		strong.item_titre= i.titre
 	if i.texte
 		p!= markup(i.texte)
 	- if(i.imageUrl && i.imagePosition == "dessous")
@@ -192,8 +196,15 @@ body
 			.section_maxwidth
 				.bloc
 					.item
-						.titre Formulaire de contact
-						contact-form
+						.contact-panel.contact-form
+							.titre Vous pouvez me contacter en remplissant les champs suivants :
+							contact-form
+						.contact-panel.social-bar
+							.titre Vous pouvez également me retrouver sur les réseaux sociaux :
+							a(href="https://fr.linkedin.com/in/agneslachenal")
+								img(src="img/linkedin.svg")
+							a(href="http://www.viadeo.com/profile/00219tdkrrgclzwx")
+								img(src="img/viadeo.svg")
 					.item
 						for bloc in contact.blocs
 							+render(bloc)
@@ -227,4 +238,7 @@ body
 		if preprod
 			script.
 				if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
-
+		
+		script(src="bower_components/webcomponentsjs/webcomponents.js")
+		link(rel="import", href="contactform.html")
+		link(rel="import", href="bower_components/paper-toast/paper-toast.html")
