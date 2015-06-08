@@ -9,6 +9,7 @@ _docs/
 secret-config.json
 dist/img/
 dist/index.html
+dist/index.js
 dist/contactform.html
 dist/css
 dist/js
