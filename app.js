@@ -38,7 +38,7 @@ app.post('/contact', function (req, res) {
 	var mailOptions = {
 		from: process.env.MAILBOXLOGIN,
 		replyTo: req.body.email,
-		to: process.env.MAILBOXLOGIN,
+		to: (process.env.MAILBOXDEST || process.env.MAILBOXLOGIN),
 		subject: req.body.name+' - '+(req.body.subject || 'Formulaire de contact makae.fr'),
 		html: message.join('')
 	};
