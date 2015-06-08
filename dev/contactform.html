@@ -99,15 +99,15 @@ Element providing solution to no problem in particular.
 				}
 			},
 			responseChanged: function () {
-				console.log('[responseChanged] Response=', this.response);
+				// console.log('[responseChanged] Response=', this.response);
 				if (this.response = "success") {
-					console.log('[responseChanged] Success, clean');
+					// console.log('[responseChanged] Success, clean');
 					this.item.name = "";
 					this.item.email = "";
 					this.item.subject = "";
 					this.item.message = "";
 					this.item.company = "";
-					console.log('[responseChanged] Success, show toast');
+					// console.log('[responseChanged] Success, show toast');
 					document.querySelector('#toast').text = 'Message envoyé !';
 					document.querySelector('#toast').show();
 				}else{
