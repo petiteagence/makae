@@ -67,7 +67,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* LAYOUT
 ---------------------------------------*/
-	body{overflow: hidden;font-family: $ff_Lato; font-size: 16px}
+	body{font-family: $ff_Lato; font-size: 16px}
 	h1, h2, h3, h4, h5{margin: 0;padding:0}
 	p{margin: 0}
 	a{
@@ -76,10 +76,10 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		// &:visited{color:inherit}
 	}
 
-	.page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
-	.section{position: relative;overflow: hidden;}
-	.layer_fg{transform: translateZ(0);}
-	.layer_bg{@extend %fullbleed;top: -100%;bottom: 60%;background-position: 100% 100%;background-size: cover;transform: translateZ(-100px) scale(2);}
+	// .page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
+	// .section{position: relative;overflow: hidden;}
+	// .layer_fg{transform: translateZ(0);}
+	// .layer_bg{@extend %fullbleed;top: -100%;bottom: 60%;background-position: 100% 100%;background-size: cover;transform: translateZ(-100px) scale(2);}
 
 /* POPUP
 ---------------------------------------*/
@@ -98,7 +98,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* HEADER
 ---------------------------------------*/
 	.section-header{
-		&{padding: 60px 0;}
+		&{padding: 60px 0;position: relative}
 		&{text-align: center;}
 		h2{
 			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
@@ -110,6 +110,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
 		.text .maka{fill:$c_prune}
 		.text .e{fill:$c_orange}
+
+		.layer_bg{background-size: cover;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-position: right bottom;}
+		.layer_fg{position: relative;}
 	}
 
 
@@ -177,8 +180,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.box{width: $w_box3D;height: $h_box3D;display: block;transform-style: preserve-3d;transform: translateZ(- $w_box3D/2);transition: transform 350ms;}
 		.box::after{content: '';width: $w_box3D;height: $w_box3D;position: absolute;bottom: 0;box-shadow: 0 30px 50px rgba(0,0,0,0.3);transform-origin: 100% 100%;transform: rotateX(90deg) translateY($w_box3D/2);transition: box-shadow 350ms;}
 
-		.box:hover{transform: rotateY(-78deg) translateZ(20px);}
-		.box:hover::after{box-shadow: 20px -5px 50px rgba(0,0,0,0.3);}
+		.no-touch & .box:hover{transform: rotateY(-78deg) translateZ(20px);}
+		.no-touch & .box:hover::after{box-shadow: 20px -5px 50px rgba(0,0,0,0.3);}
 
 		.box_img,.box_info{position: absolute;width: $w_box3D;height: $h_box3D;background-color: #fff;backface-visibility: hidden;}
 		.box_img{transform: translateZ($w_box3D/2);background-size: cover;background-repeat: no-repeat;}

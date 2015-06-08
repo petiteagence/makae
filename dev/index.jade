@@ -178,6 +178,7 @@ body
 
 		header.section.section-header
 			a(name='header')
+			//- .layer_bg(style='background-image: url(img/'+header.image+')')
 			.layer_bg(style='background-image: url(img/'+header.image+')')
 			.layer_fg
 				include jade/header
@@ -226,6 +227,7 @@ body
 				console.log('[PopupLink click => visible=true]', popup);
 				document.querySelector(popup).parentNode.setAttribute('visible', 'true');
 			});
+			document.documentElement.className += (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
 		
 		//- Google analytics
 		if prod
