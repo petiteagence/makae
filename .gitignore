@@ -14,3 +14,4 @@ dist/contactform.html
 dist/css
 dist/js
 dev/data.coffee
+cache/
