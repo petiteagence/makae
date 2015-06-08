@@ -1,15 +1,15 @@
-/* Inspi
+/* INSPI
 ---------------------------------------
 http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 
-/* Init
+/* INIT
 ---------------------------------------*/
 	// Variables
-	$c_violet: #7f1b53;
-	$c_violet2: mix($c_violet, #fff);
-	$c_orange: #f37422;
 	$c_prune: #7f1b53;
+	$c_prune_l: mix($c_prune, #fff, 40%);
+	$c_orange: #f37422;
+	$c_orange_l: mix($c_orange, #fff, 40%);
 
 	$ff_Lato:       'Lato', sans-serif;
 	$ff_Josefin:    'Josefin Sans', sans-serif;
@@ -45,7 +45,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 	
 
-/* Fonts
+/* FONTS
 ---------------------------------------*/
 @font-face {
     font-family: 'wolf_in_the_cityregular';
@@ -62,54 +62,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 .bloc_titre{       font-family: $ff_Josefin;font-size: 17px;line-height: 38px;letter-spacing: 4px}
 .page{             font-family: $ff_Quicksand;font-size: 14px;line-height: 17px;letter-spacing: 0px}
 
-/* General
----------------------------------------*/
-	// body{background:#f5F5F5;font-family: $ff_Lato}
-	// h1, h2, h3, h4{margin: 0;padding: 0} 
 
-
-/* PRX base styles
-  --------------------------------------------- */
-	// .PRX {height: 500px;height: 100vh;overflow-x: hidden;overflow-y: auto;perspective: 300px;}
-	// .PRX_group {position: relative;height: 500px;height: 100vh;transform-style: preserve-3d;}
-	// .PRX_layer {position: absolute;top: 0;left: 0;right: 0;bottom: 0;}
-	// .PRX_layer-0 {transform: translateZ(90px) scale(.7);z-index: 1;}
-	// .PRX_layer-1 {transform: translateZ(0);z-index: 4;}
-	// .PRX_layer-2 {transform: translateZ(-300px) scale(2);z-index: 3;}
-	// .PRX_layer-3 {transform: translateZ(-600px) scale(3);z-index: 2;}
-
-
-/* Header
----------------------------------------*/
-	// .w_section0{z-index: 5}
-	// .w_section0 .PRX_layer-2{background: #fff no-repeat 50% 50%;background-size:cover}
-	// .w_section0 .PRX_layer-1{background: rgba(0,0,0,.5);}
-	// .w_section0 .PRX_layer-1:before{content:'';width:0px;background:red;height:100%;@extend %dib}
-	// .header{
-	// 	&{text-align: center;@extend %dib;width: calc(100% - 1px)}
-	// 	h1{font-size: 750%;text-transform: uppercase;color:darken($c_violet, 20%);font-family: $ff_Montserrat;text-shadow: 0 0 6px #000;}
-	// 	h1 svg{fill:$c_violet}
-	// 	h2{
-	// 		&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin}
-	// 		// .l1 *, .l2 *{@extend %dib}
-	// 		small{color:$c_violet;font-size: 55%}
-	// 		strong{color:$c_violet;font-size: 145%}
-	// 	}
-	// 	svg{width: 100%;max-width: 500px}
-	// 	.text{font-family: wolf_in_the_cityregular;font-size: 200px}
-	// 	.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
-	// 	.text .maka{fill:$c_violet}
-	// 	.text .e{fill:$c_orange}
-	// }
-	// .nav{position: absolute;bottom: 0;left: 0;right: 0;background: $c_violet2}
-	// .nav ul{@extend %ulr;text-align: center}
-	// .nav li{@extend %dib}
-	// .nav a{display: block;padding: 10px 20px;text-decoration: none;color:  $c_violet;text-transform: uppercase}
-
-
-/* Footer
----------------------------------------*/
-	// footer{@extend %basic_section;background: #555;color:#fff;padding:100px}
 
 
 /* LAYOUT
@@ -118,9 +71,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	h1, h2, h3, h4, h5{margin: 0;padding:0}
 	p{margin: 0}
 	a{
-		color:inherit;
+		color:$c_prune_l;
 		&:hover{background: rgba(0,0,0,.1);text-decoration: none}
-		&:visited{color:inherit}
+		// &:visited{color:inherit}
 	}
 
 	.page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
@@ -142,26 +95,25 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 }
 
 
-/* header
+/* HEADER
 ---------------------------------------*/
 	.section-header{
 		&{padding: 60px 0;}
 		&{text-align: center;}
 		h2{
 			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
-			// .l1 *, .l2 *{@extend %dib}
-			small{color:$c_violet;font-size: 55%}
-			strong{color:$c_violet;font-size: 145%}
+			small{color:$c_prune;font-size: 55%}
+			strong{color:$c_prune;font-size: 145%}
 		}
 		svg{width: 100%;max-width: 500px}
 		.text{font-family: wolf_in_the_cityregular;font-size: 200px}
 		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
-		.text .maka{fill:$c_violet}
+		.text .maka{fill:$c_prune}
 		.text .e{fill:$c_orange}
 	}
 
 
-/* Sections
+/* SECTIONS
 ---------------------------------------*/
 	.section{
 		&{background: no-repeat center top;}
@@ -175,42 +127,18 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.item[flex="4"]{flex:4}
 	.item[flex="5"]{flex:5}
 	.item_fondclair{background: rgba(255,255,255,.1)}
-	
-	/* Debug */
-	%debug{border:3px solid red;position: relative}
-	%debug_style{color:#fff;font-size: 12px;font-family: monospace;}
-	%debug_after{position: absolute;top: 0;left: 0;content:attr(debug);}
-	.debug .bloc[debug]{@extend %debug}
-	.debug .item[debug]{@extend %debug; border-color:green}
-	.debug .bloc[debug]:after{@extend %debug_after;background: red;@extend %debug_style}
-	.debug .item[debug]:after{@extend %debug_after;background: green;@extend %debug_style}
-	.debug .item[flex]:before{position: absolute;bottom: 0;right: 0;content:"size " attr(flex);background: green;@extend %debug_style}
 
-
-/* theme_orange
----------------------------------------*/
+	/* THEMES */
 	.theme_orange{
-		&{background-color: $c_orange;color:#fff}
-
+		background-color: $c_orange;color:#fff;
+		a{color:$c_orange_l}
 	}
-
-
-/* theme_blanc
----------------------------------------*/
-	.theme_blanc{
-		&{background-color: #fff;}
-
-	}
-	
-
-
-/* theme_prune
----------------------------------------*/
-	.theme_prune{background-color: $c_violet;color:#fff}
+	.theme_blanc{background-color: #fff;}
+	.theme_prune{background-color: $c_prune;color:#fff}
 	.theme_prune .PRX_layer-2{}
 
 
-/* Styles de contenus
+/* STYLES DE CONTENUS
 ---------------------------------------*/
 	.bloc_titre{
 		&{text-align: center;font-family: $ff_Josefin;padding: 60px 0;}
@@ -226,7 +154,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.bloc_textes{
 
 		.texte{text-align: center;}
-		.texte strong{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
+		.item_titre{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
 
 		.liste ul{margin: 0;padding-left: 30px;text-align: left;}
 		
@@ -240,13 +168,10 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.image img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
 		.dessus .image{margin-bottom: $p_paragraphe}
 		.dessous .image{margin-top: $p_paragraphe}
-		.droite .image{float: right;margin: 0 0 $p_paragraphe $p_paragraphe}
-		.gauche .image{float: left; margin: 0 $p_paragraphe $p_paragraphe 0}
-
-		
+		.droite .image{float: right;margin: 0 0 $p_paragraphe*2 $p_paragraphe*2}
+		.gauche .image{float: left; margin: 0 $p_paragraphe*2 $p_paragraphe*2 0}
 	}
 	.bloc_box3D{
-		&{}
 		.boxes{@extend %ulr;  display: flex;flex-wrap: wrap;justify-content: center;}
 		.w_box{width: $w_box3D;height: $h_box3D;margin: 30px;perspective: 1000px;}
 		.box{width: $w_box3D;height: $h_box3D;display: block;transform-style: preserve-3d;transform: translateZ(- $w_box3D/2);transition: transform 350ms;}
@@ -260,30 +185,34 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		.box_img img{width: 100%}
 		.box_info{transform: rotateY(90deg) translateZ($w_box3D/2);padding: 10px;text-align: center}
 
-		.box_orange{
-			.box_img{}
-			.box_info{background:$c_orange;color:mix($c_orange, #fff,20%);}
-		}
-		.box_prune{
-			.box_img{}
-			.box_info{background:$c_prune;color:mix($c_prune, #fff,20%);}
-		}
-
-
-
-
-		// .w_box{width: auto;height:auto}
-		// .box{width: auto;height:auto}
-		// .box_img,.box_info{width: auto;height: auto;}
-		// .box_img{position: static;width: auto}
-		// .box_img img{width: auto}
-		// .box_info{@extend %fullbleed;}
+		.box_orange .box_img{}
+		.box_orange .box_info{background:$c_orange;color:mix($c_orange, #fff,20%);}
+		.box_prune .box_img{}
+		.box_prune .box_info{background:$c_prune;color:mix($c_prune, #fff,20%);}
 	}
 
 
-/* Footer
+
+/* SECTION CONTACT
+---------------------------------------*/
+.section-contact{
+	.bloc_titre{padding: 0;}
+	.contact-panel{margin-bottom: 20px;background: #F7F7F7;padding: 10px;}
+	.contact-form{}
+	.social-bar{display:flex;align-items: center;}
+	.titre{font-size: 110%;}
+	.social-bar .titre{flex: 1;}
+	.social-bar a{margin-left: 20px;width: 40px;}
+	.social-bar a:hover{background: none;}
+	.social-bar a img{width: 100%;}
+}
+
+
+/* FOOTER
 ---------------------------------------*/
 	.section-footer{background: #555;color:#fff;}
+	.section-footer .bloc_textes a{text-decoration: none}
+	.section-footer .bloc_textes .liste ul{@extend %ulr;}
 
 
 
@@ -294,3 +223,17 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 @media only screen and (max-width: 700px){
 	.popups .popup{left: 5%;right: 5%;top: 5%;bottom: 5%;}
 }
+
+
+
+
+/* DEBUG MODE
+---------------------------------------*/
+%debug{border:3px solid red;position: relative}
+%debug_style{color:#fff;font-size: 12px;font-family: monospace;}
+%debug_after{position: absolute;top: 0;left: 0;content:attr(debug);}
+.debug .bloc[debug]{@extend %debug}
+.debug .item[debug]{@extend %debug; border-color:green}
+.debug .bloc[debug]:after{@extend %debug_after;background: red;@extend %debug_style}
+.debug .item[debug]:after{@extend %debug_after;background: green;@extend %debug_style}
+.debug .item[flex]:before{position: absolute;bottom: 0;right: 0;content:"size " attr(flex);background: green;@extend %debug_style}
