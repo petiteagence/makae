@@ -60,7 +60,8 @@ module.exports = (grunt) ->
 
 		vulcanize:
 			default:
-				# options:
+				options:
+					csp: true
 				files:
 					'dist/index.html': 'dist/index.html'
 
