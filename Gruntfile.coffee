@@ -61,7 +61,12 @@ module.exports = (grunt) ->
 		vulcanize:
 			default:
 				options:
+					inline: true
+					strip: true
 					csp: true
+					excludes:
+			          imports: ["polymer.html"]
+			          scripts: ["webcomponents.js"]
 				files:
 					'dist/index.html': 'dist/index.html'
 
@@ -121,18 +126,8 @@ module.exports = (grunt) ->
 		
 
 
-		grunt.registerTask 'server', [
-			'clean', 'copy', 'jade',
-			# 'jshint', 'removelogging', 'uglify',
-			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
-			'connect', 'watch'
-		]
 		grunt.registerTask 'build', [
 			'clean', 'copy', 'jade', 
 			# 'jshint', 'removelogging', 'uglify',
-			'sass', 'autoprefixer', 'cssmin', 'vulcanize',
-		]
-		grunt.registerTask 'heroku', [
-			'clean', 'copy', 'jade',
-			'sass', 'autoprefixer', 'cssmin',
+			'sass', 'autoprefixer', 'cssmin', # 'vulcanize',
 		]
