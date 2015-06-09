@@ -47,20 +47,20 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* FONTS
 ---------------------------------------*/
-@font-face {
-    font-family: 'wolf_in_the_cityregular';
-    src: url('../fonts/wolf_in_the_city-webfont.eot');
-    src: url('../fonts/wolf_in_the_city-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/wolf_in_the_city-webfont.woff2') format('woff2'),
-         url('../fonts/wolf_in_the_city-webfont.woff') format('woff'),
-         url('../fonts/wolf_in_the_city-webfont.ttf') format('truetype'),
-         url('../fonts/wolf_in_the_city-webfont.svg#wolf_in_the_cityregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-.section-header h2{font-family: $ff_Josefin;font-size: 44px;line-height: 52px;letter-spacing: 1px}
-.bloc_titre{       font-family: $ff_Josefin;font-size: 17px;line-height: 38px;letter-spacing: 4px}
-.page{             font-family: $ff_Quicksand;font-size: 14px;line-height: 17px;letter-spacing: 0px}
+	@font-face {
+	    font-family: 'wolf_in_the_cityregular';
+	    src: url('../fonts/wolf_in_the_city-webfont.eot');
+	    src: url('../fonts/wolf_in_the_city-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/wolf_in_the_city-webfont.woff2') format('woff2'),
+	         url('../fonts/wolf_in_the_city-webfont.woff') format('woff'),
+	         url('../fonts/wolf_in_the_city-webfont.ttf') format('truetype'),
+	         url('../fonts/wolf_in_the_city-webfont.svg#wolf_in_the_cityregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	.section-header h2{font-family: $ff_Josefin;font-size: 44px;line-height: 52px;letter-spacing: 1px}
+	.bloc_titre{       font-family: $ff_Josefin;font-size: 17px;line-height: 38px;letter-spacing: 4px}
+	.page{             font-family: $ff_Quicksand;font-size: 14px;line-height: 17px;letter-spacing: 0px}
 
 
 
@@ -75,24 +75,27 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		&:hover{background: rgba(0,0,0,.1);text-decoration: none}
 		// &:visited{color:inherit}
 	}
-
-	// .page{@extend %fullbleed;perspective: 100px;overflow-x: hidden;overflow-y: auto;}
+	
+	// PARALLAX
+	// .page{@extend %fullbleed;perspective: 100px&;overflow-x: hidden;overflow-y: auto;}
 	// .section{position: relative;overflow: hidden;}
 	// .layer_fg{transform: translateZ(0);}
 	// .layer_bg{@extend %fullbleed;top: -100%;bottom: 60%;background-position: 100% 100%;background-size: cover;transform: translateZ(-100px) scale(2);}
 
+
+
 /* POPUP
 ---------------------------------------*/
-.popups{
-	@extend %fullbleed;position: fixed;z-index: 10;background: rgba(0,0,0,.5);;
-	&[visible=false]{display: none;}
-	.popup{position: absolute;left: 20%;right: 20%;top: 20%;bottom: 20%;background: #fff;border-radius: 4px;box-shadow: 0 0 15px rgba(0,0,0,.5);}
-		.popup_title{background-color: #F5F5F5;border-radius: 4px 4px 0 0;height: 10%;display: flex;justify-content:space-between;align-items:center;overflow: hidden}
-			.popup_close{font-size: 27px;cursor: pointer;text-align: center;width: 30px;}
-			h5{padding: 8px;font-size: 100%;flex:1}
-		.popup_inner{height: 90%;padding: 20px;}
-			.popup_texte{overflow-y: scroll;height: 100%;padding: 20px;border:1px solid #eee}
-}
+	.popups{
+		@extend %fullbleed;position: fixed;z-index: 10;background: rgba(0,0,0,.5);;
+		&[visible=false]{display: none;}
+		.popup{position: absolute;left: 20%;right: 20%;top: 20%;bottom: 20%;background: #fff;border-radius: 4px;box-shadow: 0 0 15px rgba(0,0,0,.5);}
+			.popup_title{background-color: #F5F5F5;border-radius: 4px 4px 0 0;height: 10%;display: flex;justify-content:space-between;align-items:center;overflow: hidden}
+				.popup_close{font-size: 27px;cursor: pointer;text-align: center;width: 30px;}
+				h5{padding: 8px;font-size: 100%;flex:1}
+			.popup_inner{height: 90%;padding: 20px;}
+				.popup_texte{overflow-y: scroll;height: 100%;padding: 20px;border:1px solid #eee}
+	}
 
 
 /* HEADER
@@ -123,12 +126,27 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		&_maxwidth{@extend %maw;margin-top: $m_section}
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
-	.bloc{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
-	.item{display: block;margin:10px;padding: 10px;flex:1;min-width: 200px;} // background: transparentize(#fff, .8);
-	.item[flex="2"]{flex:2}
-	.item[flex="3"]{flex:3}
-	.item[flex="4"]{flex:4}
-	.item[flex="5"]{flex:5}
+	.bloc{}
+	.item{display: block;margin:10px;padding: 10px;min-width: 200px;} // background: transparentize(#fff, .8);
+
+	/* FLEX */
+	.no-flex{
+		[flex-count]{display:block;text-align: center}
+		[flex-count="1"] > [flex]{display: inline-block;vertical-align: top;width: (90% / 1)}
+		[flex-count="2"] > [flex]{display: inline-block;vertical-align: top;width: (90% / 2)}
+		[flex-count="3"] > [flex]{display: inline-block;vertical-align: top;width: (90% / 3)}
+		[flex-count="4"] > [flex]{display: inline-block;vertical-align: top;width: (90% / 4)}
+		[flex-count="5"] > [flex]{display: inline-block;vertical-align: top;width: (90% / 5)}
+	}
+	.flex{
+		[flex-count]{display:flex;align-items:stretch;justify-content:center;flex-flow: row wrap;}
+		[flex-count] > [flex="1"]{flex:1}
+		[flex-count] > [flex="2"]{flex:2}
+		[flex-count] > [flex="3"]{flex:3}
+		[flex-count] > [flex="4"]{flex:4}
+		[flex-count] > [flex="5"]{flex:5}
+	}
+	
 	.item_fondclair{background: rgba(255,255,255,.1)}
 
 	/* THEMES */
@@ -202,12 +220,22 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.bloc_titre{padding: 0;}
 	.contact-panel{margin-bottom: 20px;background: #F7F7F7;padding: 10px;}
 	.contact-form{}
-	.social-bar{display:flex;align-items: center;}
+	.social-bar{}
 	.titre{font-size: 110%;}
-	.social-bar .titre{flex: 1;}
+	.social-bar .titre{}
 	.social-bar a{margin-left: 20px;width: 40px;display: block}
 	.social-bar a:hover{background: none;}
 	.social-bar a img{width: 100%;}
+
+	.no-flex &{
+		.social-bar{text-align: center;}
+		.social-bar .titre{margin-bottom: 10px}
+		.social-bar a{display: inline-block;}
+	}
+	.flex &{
+		.social-bar{display:flex;align-items: center;}
+		.social-bar .titre{flex:1}
+	}
 }
 
 
@@ -227,6 +255,8 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 @media only screen and (max-width: 700px){
 	.popups .popup{left: 5%;right: 5%;top: 5%;bottom: 5%;}
 }
+
+
 
 
 

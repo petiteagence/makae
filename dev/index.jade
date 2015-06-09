@@ -45,7 +45,7 @@ mixin render_image(bloc)
 				figcaption!= markup(bloc.imageLegende)
 
 mixin render_textes(bloc)
-	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type, flex-count=bloc.items.length)
 		for i in bloc.items
 			if i.lien
 				if i.liste
@@ -84,7 +84,7 @@ mixin render_blocItem_texte(i)
 
 mixin render_box3D(bloc)
 	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
-		ul.boxes
+		ul.boxes(flex-count=bloc.boxes.length)
 			for b in bloc.boxes
 				li.w_box
 					a.box(class='box_'+b.themeBox, href='#'+b.lien)
@@ -197,8 +197,8 @@ body
 		section.section.section-contact
 			a(name='contact')
 			.section_maxwidth
-				.bloc
-					.item
+				.bloc(flex-count=2)
+					.item(flex=1)
 						.contact-panel.contact-form
 							.titre Vous pouvez me contacter en remplissant les champs suivants :
 							contact-form
@@ -208,7 +208,7 @@ body
 								img(src="img/linkedin.svg")
 							a(href="http://www.viadeo.com/profile/00219tdkrrgclzwx")
 								img(src="img/viadeo.svg")
-					.item
+					.item(flex=1)
 						for bloc in contact.blocs
 							+render(bloc)
 
@@ -230,6 +230,7 @@ body
 				document.querySelector(popup).parentNode.setAttribute('visible', 'true');
 			});
 			document.documentElement.className += (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
+			document.documentElement.className += (("flex" in document.documentElement.style) ? ' flex' : ' no-flex');
 		
 		//- Google analytics
 		if prod
@@ -258,6 +259,6 @@ body
 			else window.addEventListener('load', cb);
 
 		//- Web Components
-		script(src="bower_components/webcomponentsjs/webcomponents.js")
+		script(src="bower_components/webcomponentsjs/webcomponents-lite.js")
 		link(rel="import", href="contactform.html")
 		link(rel="import", href="bower_components/paper-toast/paper-toast.html")
