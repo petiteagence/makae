@@ -98,26 +98,6 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 
 
-/* HEADER
----------------------------------------*/
-	.section-header{
-		&{padding: 60px 0;position: relative}
-		&{text-align: center;}
-		h2{
-			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
-			small{color:$c_prune;font-size: 55%}
-			strong{color:$c_prune;font-size: 145%}
-		}
-		svg{width: 100%;max-width: 500px}
-		.text{font-family: wolf_in_the_cityregular;font-size: 200px}
-		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
-		.text .maka{fill:$c_prune}
-		.text .e{fill:$c_orange}
-
-		.layer_bg{background-size: cover;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-position: right bottom;}
-		.layer_fg{position: relative;}
-	}
-
 
 /* SECTIONS
 ---------------------------------------*/
@@ -158,6 +138,27 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.theme_prune{background-color: $c_prune;color:#fff}
 	.theme_prune .PRX_layer-2{}
 
+
+
+/* HEADER
+---------------------------------------*/
+	.section-header{
+		&{padding: 60px 0;position: relative;background: #222;}
+		&{text-align: center;}
+		h2{
+			&{font-size: 270%;text-transform: uppercase;color: #FFF;margin-bottom: 50px;font-family: $ff_Josefin;text-shadow: 0 0 5px rgba(0,0,0,0.4)}
+			small{color:$c_prune;font-size: 55%}
+			strong{color:$c_prune;font-size: 145%}
+		}
+		svg{width: 100%;max-width: 500px;max-height: 190px;}
+		.text{font-family: wolf_in_the_cityregular;font-size: 200px}
+		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
+		.text .maka{fill:$c_prune}
+		.text .e{fill:$c_orange}
+
+		.layer_bg{background-size: cover;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-position: right bottom;}
+		.layer_fg{position: relative;}
+	}
 
 /* STYLES DE CONTENUS
 ---------------------------------------*/
