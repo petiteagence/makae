@@ -205,7 +205,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.social-bar{display:flex;align-items: center;}
 	.titre{font-size: 110%;}
 	.social-bar .titre{flex: 1;}
-	.social-bar a{margin-left: 20px;width: 40px;}
+	.social-bar a{margin-left: 20px;width: 40px;display: block}
 	.social-bar a:hover{background: none;}
 	.social-bar a img{width: 100%;}
 }
