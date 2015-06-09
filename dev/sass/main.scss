@@ -214,6 +214,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* FOOTER
 ---------------------------------------*/
 	.section-footer{background: #555;color:#fff;}
+	.section-footer .bloc_titre{padding:0}
 	.section-footer .bloc_textes a{text-decoration: none}
 	.section-footer .bloc_textes .liste ul{@extend %ulr;}
 
