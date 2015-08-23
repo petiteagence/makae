@@ -1,0 +1,52 @@
+//- Popup interactions
+script.
+	document.querySelector('.popup_close').addEventListener('click', function(){
+		console.log('[PopupClose click => visible=false]');
+		this.parentNode.parentNode.parentNode.setAttribute('visible', 'false');
+	});
+	document.querySelector('[href*="#popup"]').addEventListener('click', function(){
+		var popup = this.getAttribute('href');
+		console.log('[PopupLink click => visible=true]', popup);
+		document.querySelector(popup).parentNode.setAttribute('visible', 'true');
+	});
+	document.documentElement.className += (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
+	document.documentElement.className += (("flex" in document.documentElement.style) ? ' flex' : ' no-flex');
+	document.documentElement.className += (("perspective" in document.documentElement.style) ? ' css3d' : ' no-css3d');
+
+	function step() {
+		document.body.setAttribute("scroll", (window.scrollY === 0) ? "false" : true);
+		window.requestAnimationFrame(step);
+	}
+
+	window.requestAnimationFrame(step);
+
+//- Google analytics
+if prod
+	script.
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-63814857-1', 'auto');
+		ga('send', 'pageview');
+
+//- Debug mode
+//- if preprod
+//- script.
+	if(~window.location.href.indexOf('debug')) document.body.className = 'debug';
+
+//- Non blocking CSS
+//- script.
+	var cb = function() {
+		var l = document.createElement('link'); l.rel = 'stylesheet';
+		l.href = 'https://fonts.googleapis.com/css?family=Quicksand:400,700|Josefin+Sans:300';
+		var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+	};
+	var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+	if (raf) raf(cb);
+	else window.addEventListener('load', cb);
+
+//- Web Components
+script(src="bower_components/webcomponentsjs/webcomponents.js")
+link(rel="import", href="contactform.html")
+link(rel="import", href="bower_components/paper-toast/paper-toast.html")

@@ -1,0 +1,126 @@
+mixin img(src,alt,lien)
+	if lien
+		a.image(href=lien)
+			img(src=resolveImageSrc(src), alt=alt, title=alt)
+	else
+		span.image
+			img(src=resolveImageSrc(src), alt=alt, title=alt)
+
+	
+
+mixin render(bloc)
+	+#{'render_'+bloc.type}(bloc)
+
+mixin render_blocs(bloc)
+	.bloc.bloc_blocs
+		for b in bloc.blocs
+			+render(b)
+
+mixin render_blocsHorizontaux(bloc)
+	.bloc.bloc_blocs(flex-count=bloc.blocsHorizontaux.length)
+		for b in bloc.blocsHorizontaux
+			.w_bloc(flex=(b.size||"1"))
+				+render(b)
+
+mixin render_titre(bloc)
+	.bloc.bloc_titre
+		div.item(debug='item_titre')
+			h3!= markup(bloc.titre)
+			if bloc.soustitre
+				h4!= markup(bloc.soustitre)
+
+mixin render_items(bloc)
+	.bloc.bloc_items(flex-count=bloc.items.length)
+		for item in bloc.items
+			- var i = items[item]
+			
+			.i(flex=(i.size||"1"))
+				if i.titre
+					h5.i_titre
+						if i.titreIcon
+							img(src=resolveImageSrc(i.titreIcon))
+						span!= markup(i.titre)
+
+				if i.image && !i.imagePosition || i.imagePosition == "dessus"
+					figure.i_img.i_img_dessus
+						+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
+				
+				if i.texte
+					if i.image && i.imagePosition == "gauche"
+						figure.i_img.i_img_gauche
+							+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
+					
+					p.i_texte(class='i_texte_'+(i.texteAlign||"gauche"))
+						span.i_texte_contenu!= markup(i.texte)
+					
+					if i.image && i.imagePosition == "droite"
+						figure.i_img.i_img_droite
+							+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
+				
+				if i.liste
+					ul.i_liste
+						for l in i.liste
+							li!= markup(l)
+				
+				if i.image && i.imagePosition == "dessous"
+					figure.i_img.i_img_dessous
+						+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
+
+				if i.html
+					div!= i.html
+
+//- mixin render_image(bloc)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type)
+		figure.item(debug='item_image')
+			+img(bloc.imageUrl, bloc.imageAlt, bloc.imageLien)
+			if bloc.imageLegende
+				figcaption!= markup(bloc.imageLegende)
+
+//- mixin render_textes(bloc)
+	.bloc(class='bloc_'+bloc.type, debug='bloc_'+bloc.type, flex-count=bloc.items.length)
+		for i in bloc.items
+			if i.lien
+				if i.liste
+					a.item.liste(href=i.lien, class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1), class=i.style || false): +render_blocItem_liste(i)
+				else
+					a.item.texte(href=i.lien, class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1), class=i.style || false): +render_blocItem_texte(i)
+			else
+				if i.liste
+					.item.liste(class=i.imagePosition||'dessus', debug='item_liste', flex=(i.size || 1), class=i.style || false): +render_blocItem_liste(i)
+				else
+					.item.texte(class=i.imagePosition||'dessus', debug='item_texte', flex=(i.size || 1), class=i.style || false): +render_blocItem_texte(i)
+			
+
+
+//- mixin render_blocItem_liste(i)
+	- if(i.imageUrl && i.imagePosition != "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	if i.titre
+		strong.item_titre= i.titre
+	ul
+		for li in i.liste
+			li!= markup(li)
+	- if(i.imageUrl && i.imagePosition == "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+		
+//- mixin render_blocItem_texte(i)
+	- if(i.imageUrl && i.imagePosition != "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+	if i.titre
+		strong.item_titre= i.titre
+	if i.texte
+		p!= markup(i.texte)
+	- if(i.imageUrl && i.imagePosition == "dessous")
+		+img(i.imageUrl, i.imageAlt, i.imageLien)
+
+
+mixin render_box3D(bloc)
+	.bloc.bloc_box3D
+		ul.boxes(flex-count=bloc.boxes.length)
+			for b in bloc.boxes
+				li.w_box
+					a.box(class='box_'+b.themeBox, href='#'+b.lien)
+						.box_img
+							+img(b.imageUrl, b.imageAlt)
+						.box_info
+						p!= markup(b.texte)

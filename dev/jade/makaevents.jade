@@ -1,0 +1,85 @@
+{
+	id: "makaevent"
+	image: "etincelles.jpg"
+	theme: "prune"
+	blocs: [
+
+		{
+			type: "textes"
+			items: [
+				{
+					texte: "L'organisation de séminaires, apéritifs, petits déjeuners, soirées d'entreprises, ou toute autre forme d'événements pour motiver, remercier, challenger, fédérer, réunir, communiquer, salariés et clients. Pour les petites et moyennes entreprises qui veulent une relation différente avec l'événementiel.",
+					imageUrl: "team.svg"
+					imageAlt: "Alt de l'image"
+					imagePosition: "dessus"
+				}
+				{
+					texte: "Une réponse pour les formateurs indépendants qui veulent se concentrer sur leurs formations [saut] l'offre Forma'zen de Makae et son partenaire MA Conseil : des solutions de logistique et de gestion administrative externalisée adaptées à votre contexte.",
+					imageUrl: "clients.svg"
+					imageAlt: "Alt de l'image"
+					imagePosition: "dessus"
+				}
+				{
+					texte: "Une solution d'événementiel adaptée aux besoins des franchisés : en complément des formations de la structure, une forme d'animation événementielle pour des franchisés qui veulent profiter à 200% de leur réseau.",
+					imageUrl: "guide.svg"
+					imageAlt: "Alt de l'image"
+					imagePosition: "dessus"
+				}
+			]
+		}
+		{
+			type: "textes"
+			items: [
+				{
+					titre: "Une offre adaptée à vos besoins"
+					liste: [
+						"conception de l’événement",
+						"réalisation / coordination des partenaires",
+						"gestion de projet sur place le jour J",
+						"suivi qualité a posteriori / recherche d'éléments mesurables sur la réussite de l'événement."
+					]
+					style: "item_fondclair"
+				}
+				{
+					titre: "3 forfaits Forma'zen"
+					liste: [
+						"[gras|la logistique parfaite] : recherche du lieu, aménagement, pauses et repas, Paris & Province",
+						"[gras|la merveille administrative] : gestion de l’administratif de vos formations, relation avec les OPCA, ...",
+						"[gras|les formations sont une merveille] : Avec Makae, logistique complète / Avec M.A. Conseil, gestion de l’administratif ",
+						"Des forfaits en nombre de jours ou nombre de formations, selons vos besoins.",
+					]
+					style: "item_fondclair"
+				}
+				{
+					titre: "La réussite de l'événement commence par le brief",
+					texte: "Ensemble, nous étudions vos besoins, votre situation, vos attentes, votre contexte qui feront que votre événement sera différent de tous les autres. [saut] Pourquoi investir ? Quel ROI attendez vous ? quelle est la cible de l'événement ?",
+					style: "item_fondclair"
+				}
+			]
+		}
+	]
+}
+
+section.section.theme_prune(style="background-image: url(img/etincelles.jpg)")
+	a(name="makaevent")
+	.section_maxwidth
+		h3 Une Direction événementielle externalisée
+		h4 Nous organisons vos événements éphémères pour qu'ils durent longtemps
+
+		div.bloc.bloc_textes(debug="bloc_textes", flex-count="3")
+
+			div.item.texte.dessus(debug="item_texte", flex="1")
+				span.image
+					img(src="img/team.svg", alt="Alt de l'image", title="Alt de l'image")
+				p L'organisation de séminaires, apéritifs, petits déjeuners, soirées d'entreprises, ou toute autre forme d'événements pour motiver, remercier, challenger, fédérer, réunir, communiquer, salariés et clients. Pour les petites et moyennes entreprises qui veulent une relation différente avec l'événementiel.
+			
+			div.item.texte.dessus(debug="item_texte", flex="1")
+				span.image
+					img(src="img/clients.svg", alt="Alt de l'image", title="Alt de l'image")
+				p Une réponse pour les formateurs indépendants qui veulent se concentrer sur leurs formations
+				p l'offre Forma'zen de Makae et son partenaire MA Conseil&nbsp;: des solutions de logistique et de gestion administrative externalisée adaptées à votre contexte.
+			
+			div.item.texte.dessus(debug="item_texte", flex="1")
+				span.image
+					img(src="img/guide.svg", alt="Alt de l'image", title="Alt de l'image")
+				p Une solution d'événementiel adaptée aux besoins des franchisés&nbsp;: en complément des formations de la structure, une forme d'animation événementielle pour des franchisés qui veulent profiter à 200% de leur réseau.

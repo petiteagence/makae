@@ -101,13 +101,18 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 
 /* SECTIONS
 ---------------------------------------*/
+	#makaelogo{width: 100%;max-width: 500px;max-height: 190px;
+		.text{font-family: wolf_in_the_cityregular;font-size: 200px}
+		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
+		.text .maka{fill:$c_prune}
+		.text .e{fill:$c_orange}
+	}
+
 	.section{
 		&{background: no-repeat center top;overflow: hidden;}
 		&_maxwidth{@extend %maw;margin-top: $m_section}
 		&_maxwidth > *{margin-bottom: $m_section;}
 	}
-	.bloc{}
-	.item{display: block;margin:10px;padding: 10px;min-width: 200px;} // background: transparentize(#fff, .8);
 
 	/* FLEX */
 	.no-flex{
@@ -137,8 +142,21 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	.theme_blanc{background-color: #fff;}
 	.theme_prune{background-color: $c_prune;color:#fff}
 	.theme_prune .PRX_layer-2{}
+	.theme_gris{background-color: #ddd;}
 
 
+/* NAV
+---------------------------------------*/
+	.nav{
+		&{position: fixed; top:-200px; left:0; right:0; background: transparentize(#000, 0.2);z-index: 10;transition: all 0.5s;height: 70px}
+		&_makaelogo{width: 100%;max-width: 50px;max-height: 50px;}
+		ul{display:flex;@extend %ulr;align-items: center;	}
+		li{padding:10px}
+		li.logo{flex:8}
+		li.menu{}
+	}
+	body[scroll="true"] .nav{top:0px;}
+	a[name]{position: absolute;margin-top: -70px;height: 1px;width: 100%;display: block;z-index: -1;}
 
 /* HEADER
 ---------------------------------------*/
@@ -150,11 +168,6 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 			small{color:$c_prune;font-size: 55%}
 			strong{color:$c_prune;font-size: 145%}
 		}
-		svg{width: 100%;max-width: 500px;max-height: 190px;}
-		.text{font-family: wolf_in_the_cityregular;font-size: 200px}
-		.text_stroke{font-family: wolf_in_the_cityregular;stroke:#fff;stroke-width: 13;font-size: 200px}
-		.text .maka{fill:$c_prune}
-		.text .e{fill:$c_orange}
 
 		.layer_bg{background-size: cover;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-position: right bottom;}
 		.layer_fg{position: relative;}
@@ -167,32 +180,32 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		h3{font-size: 230%;}
 		h4{font-size: 160%;}
 	}
-	.bloc_image{
-		&{text-align: center;}
-		img{max-width: 100%;border-radius: 2px;}
-		img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
-		figcaption{}
-	}
-	.bloc_textes{
+	// .bloc_image{
+	// 	&{text-align: center;}
+	// 	img{max-width: 100%;border-radius: 2px;}
+	// 	img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
+	// 	figcaption{}
+	// }
+	// .bloc_textes{
 
-		.texte{text-align: center;}
-		.item_titre{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
+	// 	.texte{text-align: center;}
+	// 	.item_titre{display: block;font-size: 130%;margin-bottom: $p_paragraphe}
 
-		.liste ul{margin: 0;padding-left: 30px;text-align: left;}
+	// 	.liste ul{margin: 0;padding-left: 30px;text-align: left;}
 		
-		.droite{@extend %clearfix;text-align: left}
-		.gauche{@extend %clearfix;text-align: left}
-		.dessus{text-align: center}
-		.dessous{text-align: center}
+	// 	.droite{@extend %clearfix;text-align: left}
+	// 	.gauche{@extend %clearfix;text-align: left}
+	// 	.dessus{text-align: center}
+	// 	.dessous{text-align: center}
 
-		.image{display: inline-block;}
-		.image img{vertical-align: top;border-radius: 2px;}
-		.image img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
-		.dessus .image{margin-bottom: $p_paragraphe}
-		.dessous .image{margin-top: $p_paragraphe}
-		.droite .image{float: right;margin: 0 0 $p_paragraphe*2 $p_paragraphe*2}
-		.gauche .image{float: left; margin: 0 $p_paragraphe*2 $p_paragraphe*2 0}
-	}
+	// 	.image{display: inline-block;}
+	// 	.image img{vertical-align: top;border-radius: 2px;max-width: 100%;}
+	// 	.image img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
+	// 	.dessus .image{margin-bottom: $p_paragraphe}
+	// 	.dessous .image{margin-top: $p_paragraphe}
+	// 	.droite .image{float: right;margin: 0 0 $p_paragraphe*2 $p_paragraphe*2}
+	// 	.gauche .image{float: left; margin: 0 $p_paragraphe*2 $p_paragraphe*2 0}
+	// }
 	.css3d .bloc_box3D{
 		.boxes{@extend %ulr;  display: flex;flex-wrap: wrap;justify-content: center;}
 		.w_box{width: $w_box3D;height: $h_box3D;margin: 30px;perspective: 1000px;}
@@ -220,9 +233,41 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	}
 
 
+/* ITEMS
+---------------------------------------*/
+.i{
+	&{display: block;margin:10px;padding: 10px;min-width: 200px;} // background: transparentize(#fff, .8);
+
+	&_titre{font-size: 130%;margin-bottom: $p_paragraphe;@extend %clearfix;}
+	&_titre span{display:block;}
+	&_titre img{width:30px;display:block;float: left}
+
+	&_texte{}
+	&_texte_centre{text-align: center;}
+	&_texte_gauche{text-align: left;}
+	&_texte_droite{text-align: right;}
+	&_texte_justif{text-align: justify}
+
+	&_liste{margin: 0; padding: $p_paragraphe $p_paragraphe*2}
+	&_liste li{}
+
+	&_img{display: inline-block;margin: 0}
+	&_img img{vertical-align: top;border-radius: 2px;max-width: 100%;}
+	&_img img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
+	&_img_dessus{margin-bottom: $p_paragraphe}
+	&_img_droite{float: right;margin: 0 0 $p_paragraphe*2 $p_paragraphe*2}
+	&_img_dessous{margin-top: $p_paragraphe}
+	&_img_gauche{float: left; margin: 0 $p_paragraphe*2 $p_paragraphe*2 0}
+	
+}
+
+
+
+
 /* SECTION CONTACT
 ---------------------------------------*/
 .section-contact{
+	&{background-color: #ddd}
 	.bloc_titre{padding: 0;}
 	.contact-panel{margin-bottom: 20px;background: #F7F7F7;padding: 10px;}
 	.contact-form{}

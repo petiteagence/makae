@@ -1,0 +1,62 @@
+// if preprod
+	div.fonts(style='color:#fff;position: absolute;z-index: 10;padding: 10px;top: 10px;right: 20px;background-color: rgba(0,0,0,0.3);font-size: 12px;width:300px')
+		.titre(style='background:#000;clear:both;padding:2px') Accroche
+		div
+			label letter-spacing
+			input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label line-height
+			input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label font-size
+			input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".section-header h2"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+
+		.titre(style='background:#000;clear:both;padding:2px') titres
+		div
+			label letter-spacing
+			input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label line-height
+			input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label font-size
+			input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".bloc_titre"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+
+		.titre(style='background:#000;clear:both;padding:2px') textes
+		div
+			label letter-spacing
+			input.range_titre_ls(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.letterSpacing=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label line-height
+			input.range_titre_lh(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.lineHeight=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		div
+			label font-size
+			input.range_titre_fz(type='range', oninput='t=this;Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontSize=t.value+\'px\';t.parentNode.querySelector("span").innerHTML=t.value+\'px\';});')
+			span.value
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Lato\'"});',             style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Lato
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Josefin Sans\'"});',     style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Josefin
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Droid Serif\'"});',      style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Droid
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Montserrat\'"});',       style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Montserrat
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Alegreya Sans SC\'"});', style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Alegreyasc
+		a(onclick='Array.prototype.forEach.call(document.querySelectorAll(".page"),function (node){node.style.fontFamily="\'Quicksand\'"});',        style='background:rgba(0,0,0,.5);margin:2px;cursor:pointer;color:#fff;float:left;display:block;padding:2px') Quicksand
+	

@@ -1,0 +1,17 @@
+- var resolveImageSrc = function(src){
+- 	return (src.toLowerCase().indexOf('http') > -1) ? src : 'img/'+src;
+- }
+
+- var markup = function(text){
+-   if(!text) return '';
+- 	text = text.replace(/\[saut\]/g, '<br>');
+- 	text = text.replace(/\[gras ?\| ?([^\]]*)\]/g, '<strong>$1</strong>');
+- 	text = text.replace(/\[italique ?\| ?([^\]]*)\]/g, '<em>$1</em>');
+- 	text = text.replace(/\[petit ?\| ?([^\]]*)\]/g, '<small>$1</small>');
+- 	text = text.replace(/\[lien ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="$2">$1</a>');
+- 	text = text.replace(/\[lien ?\| ?http:\/\/([^\]]*)\]/g, '<a href="http://$1">$1</a>');
+- 	text = text.replace(/\[lien ?\| ?https:\/\/([^\]]*)\]/g, '<a href="https://$1">$1</a>');
+- 	text = text.replace(/\[ancre ?\| ?([^\|]*) ?\| ?([^\]]*)\]/g, '<a href="#$2">$1</a>');
+- 	text = text.replace(/ (\?|!|:)/g, '&nbsp;$1');
+- 	return text
+- }
