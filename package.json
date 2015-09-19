@@ -9,6 +9,7 @@
     "body-parser": "latest",
     "bower": "latest",
     "coffeeson": "latest",
+    "colors": "^1.1.2",
     "compression": "latest",
     "express": "latest",
     "express-minify": "^0.1.6",
@@ -29,5 +30,10 @@
     "load-grunt-tasks": "latest",
     "markdown": "latest",
     "nodemailer": "latest"
+  },
+  "scripts": {
+    "build": "ENV='prod' grunt build",
+    "app": "MAILBOXLOGIN='pypointereau@gmail.com' MAILBOXPASSWORD='password' node app.js",
+    "server": "npm run build && npm run app"
   }
 }
