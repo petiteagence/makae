@@ -41,6 +41,10 @@ mixin render_items(bloc)
 							img(src=resolveImageSrc(i.titreIcon))
 						span!= markup(i.titre)
 
+				if i.image && i.imagePosition == "seule"
+					figure.i_img.i_img_seule
+						+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
+
 				if i.image && !i.imagePosition || i.imagePosition == "dessus"
 					figure.i_img.i_img_dessus
 						+img(i.image, i.imageAlt || i.titre, (i.imageLien)?i.imageLien:'')
