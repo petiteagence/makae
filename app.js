@@ -4,6 +4,7 @@ var expressMinify = require('express-minify');
 var compression = require('compression');
 var nodemailer = require('nodemailer');
 var port = process.env.PORT || 3000;
+var color = require('colors');
 
 var app = express();
 app.use(bodyParser.json());
@@ -57,4 +58,5 @@ app.post('/contact', function (req, res) {
 
 });
 
+console.log('App running on http://localhost:3000/'.green);
 app.listen(port);
