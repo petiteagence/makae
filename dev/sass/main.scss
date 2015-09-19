@@ -7,9 +7,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 ---------------------------------------*/
 	// Variables
 	$c_prune: #7f1b53;
-	$c_prune_l: mix($c_prune, #fff, 50%);
+	$c_prune_l: mix($c_prune, #fff, 40%);
 	$c_orange: #f37422;
-	$c_orange_l: mix($c_orange, #fff, 50%);
+	$c_orange_l: mix($c_orange, #fff, 40%);
 
 	$ff_Lato:       'Lato', sans-serif;
 	$ff_Josefin:    'Josefin Sans', sans-serif;
@@ -130,20 +130,25 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 		[flex-count] > [flex="3"]{flex:3}
 		[flex-count] > [flex="4"]{flex:4}
 		[flex-count] > [flex="5"]{flex:5}
+		[flex-count] > [flex="6"]{flex:6}
+		[flex-count] > [flex="7"]{flex:7}
+		[flex-count] > [flex="8"]{flex:8}
+		[flex-count] > [flex="9"]{flex:9}
+		[flex-count] > [flex="10"]{flex:10}
 	}
 	
 	.item_fondclair{background: rgba(255,255,255,.1)}
 
 	/* THEMES */
 	.theme_orange{
-		background-color: $c_orange;color:#fff;
+		background-color: $c_orange;color:$c_orange_l;
 		a{color:$c_orange_l}
-		.i_titre{color:$c_orange_l}
+		.bloc_items .i_titre{color:#fff;}
 	}
 	.theme_prune{
-		background-color: $c_prune;color:#fff;
+		background-color: $c_prune;color: $c_prune_l;
 		a{color: $c_prune_l}
-		.i_titre{color: $c_prune_l}
+		.bloc_items .i_titre{color:#fff;}
 	}
 	.theme_blanc{background-color: #fff;}
 	
@@ -241,9 +246,9 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 /* ITEMS
 ---------------------------------------*/
 .i{
-	&{display: block;margin:10px;padding: 10px;min-width: 200px;} // background: transparentize(#fff, .8);
+	&{display: block;margin:10px;padding: 10px;min-width: 200px;font-size: 130%;line-height: 140%}
 
-	&_titre{font-size: 130%;margin-bottom: $p_paragraphe;@extend %clearfix;}
+	&_titre{font-size: 140%;line-height: 110%;margin-bottom: $p_paragraphe;@extend %clearfix;}
 	&_titre span{display: flex;align-items: center;}
 	&_titre img{width:60px;float: left}
 
@@ -253,10 +258,10 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	&_texte_droite{text-align: right;}
 	&_texte_justif{text-align: justify}
 
-	&_liste{margin: 0; padding: $p_paragraphe $p_paragraphe*2}
+	&_liste{margin: 0; padding: $p_paragraphe $p_paragraphe*2;}
 	&_liste li{}
 
-	&_img{display: inline-block;margin: 0}
+	&_img{display: inline-block;margin: 0;width: 100%;}
 	&_img img{vertical-align: top;border-radius: 2px;max-width: 100%;width:100%}
 	&_img img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
 	&_img_dessus{margin-bottom: $p_paragraphe}

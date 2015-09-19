@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>formation</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Formation" sketch:type="MSArtboardGroup">
+            <rect id="Rectangle-22" fill="#F37422" sketch:type="MSShapeGroup" x="0" y="0" width="40" height="40"></rect>
+            <g id="Whiteboard" sketch:type="MSLayerGroup" transform="translate(4.000000, 4.000000)">
+                <rect id="Rectangle-37" fill="#90A4AE" sketch:type="MSShapeGroup" x="0" y="0" width="32" height="26"></rect>
+                <rect id="Rectangle-37-Copy" fill="#FFFFFF" sketch:type="MSShapeGroup" x="1" y="1" width="30" height="24"></rect>
+                <g id="Whiteboard-content" transform="translate(3.000000, 3.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-42" fill="#81C784" x="2" y="15" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy" fill="#81C784" x="3" y="14" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-2" fill="#81C784" x="4" y="13" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-3" fill="#81C784" x="5" y="13" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-4" fill="#81C784" x="6" y="13" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-5" fill="#81C784" x="7" y="14" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-6" fill="#81C784" x="8" y="13" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-7" fill="#81C784" x="9" y="12" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-8" fill="#81C784" x="9" y="11" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-9" fill="#81C784" x="9" y="10" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-10" fill="#81C784" x="10" y="9" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-11" fill="#81C784" x="11" y="8" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-12" fill="#81C784" x="12" y="7" width="1" height="1"></rect>
+                    <rect id="Rectangle-42-Copy-13" fill="#81C784" x="13" y="7" width="1" height="1"></rect>
+                    <rect id="Rectangle-41" fill="#E57373" x="1" y="17" width="18" height="1"></rect>
+                    <rect id="Rectangle-39" fill="#64B5F6" x="0" y="0" width="11" height="1"></rect>
+                    <rect id="Rectangle-40" fill="#E57373" x="0" y="5" width="1" height="13"></rect>
+                </g>
+            </g>
+            <g id="Buste" sketch:type="MSLayerGroup" transform="translate(20.000000, 8.000000)">
+                <path d="M0,12 L1,12 L1,11 L13,11 L13,12 L14,12 L14,23 L0,23 L0,12 Z" id="Rectangle-19" fill="#F06292" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-56" fill="#81C784" sketch:type="MSShapeGroup" x="2" y="22" width="10" height="6"></rect>
+                <path d="M12,14 L11,14 L11,11 L13,11 L13,12 L14,12 L14,23 L12,23 L12,14 Z" id="Rectangle-37" fill="#F1B196" sketch:type="MSShapeGroup"></path>
+                <path d="M3,3 L11,3 L11,10 L9,10 L9,14 L8,14 L8,15 L6,15 L6,14 L5,14 L5,10 L3,10 L3,3 Z" id="Rectangle-18" fill="#F1B196" sketch:type="MSShapeGroup"></path>
+                <path d="M11,8 L12,8 L12,10 L10,10 L10,3 L4,3 L4,10 L2,10 L2,8 L3,8 L3,3 L3,0 L9,0 L9,1 L10,1 L10,2 L11,2 L11,8 Z" id="Path-17" fill="#333333" sketch:type="MSShapeGroup"></path>
+                <path d="M1,11 L1,12 L0,12 L0,23 L2,23 L2,14 L3,14 L3,11 L1,11 Z" id="Path-23" fill="#F1B196" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
