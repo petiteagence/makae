@@ -261,9 +261,10 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 	&_liste{margin: 0; padding: $p_paragraphe $p_paragraphe*2;}
 	&_liste li{}
 
-	&_img{display: inline-block;margin: 0;width: 100%;}
+	&_img{display: inline-block;margin: 0;}
 	&_img img{vertical-align: top;border-radius: 2px;max-width: 100%;width:100%}
 	&_img img[src*="jpg"]{box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.3);}
+	&_img_seule{width: 100%;}
 	&_img_dessus{margin-bottom: $p_paragraphe}
 	&_img_droite{float: right;margin: 0 0 $p_paragraphe*2 $p_paragraphe*2}
 	&_img_dessous{margin-top: $p_paragraphe}
