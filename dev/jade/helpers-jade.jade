@@ -36,10 +36,7 @@ mixin render_items(bloc)
 			
 			.i(flex=(i.size||"1"))
 				if i.titre
-					h5.i_titre
-						if i.titreIcon
-							img(src=resolveImageSrc(i.titreIcon))
-						span!= markup(i.titre)
+					h5.i_titre!= markup(i.titre)
 
 				if i.image && i.imagePosition == "seule"
 					figure.i_img.i_img_seule

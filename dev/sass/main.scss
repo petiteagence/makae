@@ -248,7 +248,7 @@ http://tympanus.net/Tutorials/3DShadingWithBoxShadows/
 .i{
 	&{display: block;margin:10px;padding: 10px;min-width: 200px;font-size: 130%;line-height: 140%}
 
-	&_titre{font-size: 140%;line-height: 110%;margin-bottom: $p_paragraphe;@extend %clearfix;}
+	&_titre{font-size: 140%;line-height: 110%;margin-bottom: $p_paragraphe;}
 	&_titre span{display: flex;align-items: center;}
 	&_titre img{width:60px;float: left}
 
