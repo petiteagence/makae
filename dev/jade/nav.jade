@@ -3,7 +3,9 @@
 ul
 	li.logo
 		img.nav_makaelogo(src='/logo/MakaeFlowerSticker.svg')
-	li.menu: a(href='#makaevent') Makaevent
-	li.menu: a(href='#makaepop') Makaepop
-	li.menu: a(href='#news') News
+	
+	for section in sections
+		if(section.nav)
+			li.menu: a(href='#'+section.id)= section.nav
+	
 	li.menu: a(href='#contact') Contact
