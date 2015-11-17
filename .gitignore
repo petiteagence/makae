@@ -13,6 +13,4 @@ dist/index.js
 dist/contactform.html
 dist/css
 dist/js
-dist/libs
-dev/data.coffee
 cache/
