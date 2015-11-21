@@ -34,7 +34,7 @@ mixin render_items(bloc)
 		for item in bloc.items
 			- var i = items[item]
 			
-			.i(flex=(i.size||"1"))
+			.i(flex=(i.size||"1"), class="item_"+item)
 				if i.titre
 					h5.i_titre!= markup(i.titre)
 
